@@ -1,0 +1,44 @@
+{  
+  "Accueil": "Accueil",
+    "Produits": "Produits",
+    "Hero":{ "heroTitle":"Offres exclusives de la collection Eyeclasses",
+    "heroP":"Explorez différentes catégories. Trouvez les meilleures offres.",
+    "heroButton":"Achetez maintenant"},
+    "Landing": {  "Title":"Dernier produit",
+    "Card":{
+      "Livraison":{
+        "Free":"Livraison gratuite",
+        "NotFree":"Livraison payante"
+      }
+    },
+    "button":" Voir plus "
+  
+  }, 
+  "Footer":{
+    "Addresse":"Adresse",
+    "Addressep":"Rue des frères zerouk, quartier ein el kbir, Médéa , 26000",
+    "Page":"Page",
+    "Map":"Map:",
+    "Categorie":"Categorie",
+    "Femme":"Femme",
+    "Homme":"Homme",
+    "Enfants":"Enfants"
+  },
+  "Pannier":{
+    "Title":"Mon panier",
+    "BuyButton":"acheter",
+    "Total":"Total :",
+    "return":"Continuer vos achats",
+    "Card":{
+      "Livraison":{
+        "Free":"Livraison gratuite",
+        "NotFree":"Livraison payante"
+      },
+      "Qte":"Quantité :",
+      "price":"Prix : "        
+    }
+  },
+  "Money":"DA"
+
+
+  }

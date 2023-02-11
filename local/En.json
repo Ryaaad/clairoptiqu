@@ -1,0 +1,44 @@
+{  
+  "Accueil": "Home",
+    "Produits": "Products",
+    "Hero":{ "heroTitle":"Exclusive offers from the Eyeclasses collection",
+    "heroP":"Explore different categories. Find the best deals.",
+    "heroButton":"Buy Now"},
+    "Landing": {  "Title":"Lastest Product",
+    "Card":{
+      "Livraison":{
+        "Free":"Free delivery",
+        "NotFree":"Paid delivery"
+      }
+    },
+    "button":"See more"
+  
+  }, 
+  "Footer":{
+    "Addresse":"Address",
+    "Addressep":"Street of the zerouk brothers, ein el kbir district, Medea, 26000",
+    "Page":"Page",
+    "Map":"Map:",
+    "Categorie":"Category",
+    "Femme":"Women",
+    "Homme":"Men",
+    "Enfants":"Kids"
+  },
+  "Pannier":{
+    "Title":"My basket",
+    "BuyButton":"Buy",
+    "Total":"Total :",
+    "return":"Continue your purchases",
+    "Card":{
+      "Livraison":{
+        "Free":"Free delivery",
+        "NotFree":"Paid delivery"
+      },
+      "Qte":"Quantity :",
+      "price":"Price : "        
+    }
+  },
+  "Money":"DA"
+
+
+  }
