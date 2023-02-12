@@ -38,7 +38,15 @@
       "price":"Prix : "        
     }
   },
-  "Money":"DA"
+  "SideNav":{
+    "Categorie":"Categorie",
+    "Femme":"Pour Femme",
+    "Homme":"Pour Homme",
+    "Enfants":"Pour Enfants"
+  },
+  "ProduitsPage":"Nos Produits",
+  "Money":"DA",
+  "Search":"Search"
 
 
   }

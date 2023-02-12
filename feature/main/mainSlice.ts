@@ -7,13 +7,19 @@ const initialState = {
   Language:'FR',
   dir:true,
   PannierClicked:false,
-  
+  Home:true
 };
 
 const mainSlice = createSlice({
     name: 'main',
     initialState,
     reducers: {
+      ChangeRouter:(state,action:PayloadAction<String>)=>{
+        if(action.payload=='Products' ) state.Home= false
+        else if(action.payload=='Home' ) state.Home= true
+        else
+        state.Home=!state.Home
+      },
       ClickerPannier:(state)=>{  
         state.PannierClicked=!state.PannierClicked
       },
@@ -39,5 +45,5 @@ const mainSlice = createSlice({
 
 
 
-export const {ClickerPannier,ChangeLang}= mainSlice.actions
+export const {ClickerPannier,ChangeLang,ChangeRouter}= mainSlice.actions
 export default mainSlice.reducer;
