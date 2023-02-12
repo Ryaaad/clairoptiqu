@@ -30,7 +30,7 @@ export default function Home() {
             <Pannier></Pannier>
               </div>
                   }
-              <Navbar Home={true}></Navbar>
+              <Navbar></Navbar>
               <Landing></Landing>
               <Footer></Footer>
       </div>

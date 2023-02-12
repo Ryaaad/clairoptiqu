@@ -12,13 +12,14 @@ const Product = () => {
     const router = useRouter();
 const data = router.query;
 const PannierC=useSelector((state:any)=>state.main.PannierClicked)
+const direction=useSelector((state:any)=>state.main.dir)
     return (  
-              <div className='overflow-hidden w-full'>
+              <div className='overflow-hidden w-full' dir={`${direction ? 'ltr' : 'rtl'}`} >
                  { PannierC &&    <div className="fixed top-0 left-0 bottom-0 right-0 w-full grid place-content-center z-10 h-[100vh] bg-[#00000045]">
             <Pannier></Pannier>
               </div>
                   }
-                <Navbar Home={false}></Navbar>
+                <Navbar></Navbar>
                 <h1 className="text-[#E00409] text-[32px] font-semibold text-center p-4">Nos Produits</h1>
            {  data &&   <UperProductPage  id={data.id ? +data.id : 0} nom={data.name as string}
         promotion={data.discount ? +data.discount : 0}

@@ -53,9 +53,19 @@ const ShopSlice = createSlice({
         state.Total+=element.prix*element.Qte
             });
            },  
-       AddItem:(state, action: PayloadAction<{ nom: string; prix: number; img: string; promotion:number; frais_livraison: number; Qte: number; }>)=>{ 
-        const index=state.ShopedItems.length
-            state.ShopedItems.push({id: index,...action.payload})
+       AddItem:(state, action: PayloadAction<{ id:number;nom: string; prix: number; img: string; promotion:number; frais_livraison: number; Qte: number; }>)=>{ 
+        let index=state.ShopedItems.length-1
+        let exist=false
+        while (index>=0 && !exist) {
+          console.log('id:',action.payload.id);
+          
+          state.ShopedItems[index].id==action.payload.id ? exist=true : index-- ;
+         
+          
+        }
+        exist ?  state.ShopedItems[index].Qte=state.ShopedItems[index].Qte+action.payload.Qte
+        :   state.ShopedItems.push({...action.payload}) 
+          
                },  
     }
 });

@@ -5,16 +5,14 @@ import {ClickerPannier} from '../feature/main/mainSlice'
 import { useDispatch, useSelector } from "react-redux";
 import Burger from '../assets/Burger.png'
 import { useState } from 'react';
-import {ChangeLang} from '../feature/main/mainSlice'
+import {ChangeLang,ChangeRouter} from '../feature/main/mainSlice'
 import Link from 'next/link';
 
-interface props{
-Home:Boolean
-}
-const Navbar:React.FC<props> = (props) => {
 
+const Navbar= () => {
   const dispatch=useDispatch()
-   const Lang=useSelector((state:any)=>state.main.Lang) 
+   const Lang=useSelector((state:any)=>state.main.Lang)  
+   const Home=useSelector((state:any)=>state.main.Home)  
    const Language=useSelector((state:any)=>state.main.Language) 
    
    const dir=useSelector((state:any)=>state.main.dir)
@@ -30,11 +28,11 @@ const Navbar:React.FC<props> = (props) => {
             <h1 className=' font-[700] text-[26px] cursor-pointer max-lg:text-[22px] max-md:text-[20px] ' >Clair’optique</h1>
           </div>
           <ul className="flex text-[24px] font-[400] gap-[12px] max-lg:text-[18px] max-md:text-[16px] ">
-          <Link href={`/`}  className='cursor-pointer' >
-          <li className={` ${props.Home && 'underline  font-[600] '} `} >{Lang.Accueil}</li>
+          <Link href={`/`}  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter(''))} >
+          <li className={` ${Home && 'underline  font-[600] '} `} >{Lang.Accueil}</li>
           </Link>
-         <Link href={'/Produits'}  className='cursor-pointer ' >
-         <li className={` ${!props.Home && 'underline  font-[600] '} `} >{Lang.Produits}</li>
+         <Link href={'/Produits'}  className='cursor-pointer '  onClick={()=>dispatch(ChangeRouter(''))} >
+         <li className={` ${!Home && 'underline  font-[600] '} `} >{Lang.Produits}</li>
          </Link>
           </ul>
           <div className=' flex items-center relative gap-[12px] text-[16px] max-lg:text-[14px]  max-md:text-[12px] ' >
@@ -48,7 +46,7 @@ const Navbar:React.FC<props> = (props) => {
                onClick={()=>{dispatch(ChangeLang('Ar'));setLangMenu(prev=>prev=!prev)}}>العربية</h1>
             </div>}
             <div className='flex items-center cursor-pointer font-[600] gap-[6px] ' onClick={()=>setLangMenu(prev=>prev=!prev)} >
-            <MdLanguage className='text-[24px]  max-md:text-[20px]  ' ></MdLanguage>
+            <MdLanguage className='text-[24px]  max-md:text-[20px]  ' ></MdLanguage> 
             {Language} 
             </div>
             <FaShoppingCart className='text-[24px] cursor-pointer  max-md:text-[20px]' onClick={()=>dispatch(ClickerPannier())} ></FaShoppingCart>
@@ -65,8 +63,8 @@ const Navbar:React.FC<props> = (props) => {
           </div>
           </div>
    {  NavMenu && <ul className="absolute bottom-[-110%] h-[100px] bg-white z-10 p-2 text-[24px] font-[600] max-lg:text-[18px] max-md:text-[16px] text-[#4D4D81] "> 
-   <li className={` cursor-pointer ${props.Home && ' text-[red]'} `}  >{Lang.Accueil}</li>
-    <li className={` cursor-pointer ${!props.Home && ' text-[red] '} `}>{Lang.Produits}</li>          
+   <li className={` cursor-pointer ${Home && ' text-[red]'} `}  >{Lang.Accueil}</li>
+    <li className={` cursor-pointer ${!Home && ' text-[red] '} `}>{Lang.Produits}</li>          
   </ul>}
    
    

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CardP from "./CardPannier";
 import {ClickerPannier} from '../../feature/main/mainSlice'
 import {FiX } from "react-icons/fi";
+import Link from "next/link";
 
 
 const Pannier = () => {
@@ -26,7 +27,7 @@ const Pannier = () => {
      <div className="flex justify-between text-[20px] max-lg:text-[18px] max-md:text-[16px] max-md:px-2 max-sm:text-[12px] ">
      <button   className=" rounded-[10px] p-2 px-3 border-solid border-[rgba(77,77,129,1)] border-[2px] text-[rgba(77,77,129,1)] max-md:px-3 max-md:p-1  " 
      onClick={()=>dispatch(ClickerPannier())}>{LangPannier.return}</button>
-      <button  className=" bg-[rgba(77,77,129,1)] rounded-[10px] p-2 px-4 text-white max-md:px-3 max-md:p-1  " >{LangPannier.BuyButton}</button>
+       <Link href= {`http://localhost:3000/checkout`} className=" bg-[rgba(77,77,129,1)] rounded-[10px] p-2 px-4 text-white max-md:px-3 max-md:p-1  " >{LangPannier.BuyButton}</Link>
      </div>
         </div>
      );
