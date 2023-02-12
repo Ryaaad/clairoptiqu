@@ -21,7 +21,7 @@ const ProductCard:React.FC<props> = (props) => {
     query: props, // the data
   }}>
          {/* state={props} */}
-         <div className="hidden sm:block sm:w-[250px] lg:w-[240px] xl:w-[300px] rounded-bl-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px]" style={{boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+         <div className="hidden sm:block sm:w-[280px] lg:w-[270px] xl:w-[330px] rounded-bl-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px]" style={{boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
            <div className="w-full">
              <img src={img.src} alt=""  className="rounded-tl-[20px] rounded-tr-[20px] w-full" />
            </div>

@@ -13,9 +13,9 @@ const SideNav = (props: { category: (arg0: String) => void; }) => {
             <div>
             <h1 className="text-[20px] mb-2 font-bold text-[#4D4D81] ">Categorie :</h1>
             <ul className="text-[16px] flex text-white gap-2" >
-                <li className="bg-[#4D4D81] flex items-center py-2 px-[12px] rounded-tl-md rounded-br-md" onClick={()=>{props.category('Homme')}}>Pour Homme</li>
-                <li className="bg-[#4D4D81] flex items-center py-2 px-[12px] rounded-tl-md rounded-br-md" onClick={()=>{props.category('Femme')}}>Pour Femme</li>
-                <li className="bg-[#4D4D81] flex items-center py-2 px-[14px] rounded-tl-md rounded-br-md" onClick={()=>{props.category('Enfant')}}>Pour Enfant</li>
+                <li className="bg-[#4D4D81] flex items-center py-2 px-[5px] rounded-tl-md rounded-br-md" onClick={()=>{props.category('Homme')}}>Pour Homme</li>
+                <li className="bg-[#4D4D81] flex items-center py-2 px-[5px] rounded-tl-md rounded-br-md" onClick={()=>{props.category('Femme')}}>Pour Femme</li>
+                <li className="bg-[#4D4D81] flex items-center py-2 px-[5px] rounded-tl-md rounded-br-md" onClick={()=>{props.category('Enfant')}}>Pour Enfant</li>
             </ul>
             </div>
         </div>
