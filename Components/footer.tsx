@@ -1,8 +1,11 @@
 import logo from '../assets/logo2.png'
 import { BsInstagram } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
+import Link from 'next/link';
+import {ChangeRouter} from '../feature/main/mainSlice'
 const Footer = () => {
     const Lang=useSelector((state:any)=>state.main.Lang)
+    const dispatch=useDispatch()
     return ( 
         <div className="h-max bg-[rgba(77,77,129,1)] p-[45px] py-[28px]  max-lg:py-[15px] max-lg:px-[25px] text-white max-[550px]:px-[20px] max-[550px]:py-[10px] " >
         <div className="flex items-center gap-2  ">
@@ -26,8 +29,8 @@ const Footer = () => {
                 <div  className='flex flex-col gap-3 max-sm:max-w-max '>
                     <h1   className='text-[22px] font-[600] max-lg:text-[18px] max-sm:text-[16px] max-[550px]:text-[14px] max-[425px]:text-[12px]' > {Lang.Footer.Page}</h1>
                    <ul className="flex flex-col gap-3  max-sm:text-[14px] max-[550px]:text-[12px] max-[425px]:text-[10px] ">
-                    <li  className='cursor-pointer' >{Lang.Accueil}</li>
-                    <li  className='cursor-pointer' >{Lang.Produits} </li>
+                    <Link href={'/'}  className='cursor-pointer'  onClick={()=>dispatch(ChangeRouter('Home'))}  >{Lang.Accueil}</Link>
+                    <Link href={'/Produits'}  className='cursor-pointer'  onClick={()=>dispatch(ChangeRouter('Products'))} >{Lang.Produits} </Link>
                    </ul>
                 </div>
                 <div className='flex flex-col gap-3 '>

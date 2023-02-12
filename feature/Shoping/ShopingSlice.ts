@@ -3,11 +3,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 const initialState = {
   ShopedItems:[ {
     id: -1,
-    Name: 'string',
-    price: 0,
-    img: 'string',
-    discount:0,
-    livraison: false,
+    nom: '',
+    prix: 0,
+    img: '',
+    promotion:0,
+    frais_livraison: 0,
     Qte: 0
 }],
   Total:0,
@@ -26,7 +26,7 @@ const ShopSlice = createSlice({
               { state.ShopedItems[index].Qte=state.ShopedItems[index].Qte + 1 ; index=state.ShopedItems.length}
            state.Total=0
            state.ShopedItems.forEach((element:any) => {
-               state.Total+=element.price*element.Qte
+               state.Total+=element.prix*element.Qte
            });
         }
     // 
@@ -43,23 +43,33 @@ const ShopSlice = createSlice({
              }
              state.Total=0
              state.ShopedItems.forEach((element:any) => {
-                 state.Total+=element.price*element.Qte
+                 state.Total+=element.prix*element.Qte
              });
            }, 
       Delete:(state, action: PayloadAction<number>)=>{ 
         state.ShopedItems=  state.ShopedItems.filter(item=> item.id!=action.payload ) 
         state.Total=0
         state.ShopedItems.forEach((element:any) => {
-        state.Total+=element.price*element.Qte
+        state.Total+=element.prix*element.Qte
             });
            },  
-       AddItem:(state, action: PayloadAction<{ Name: string; price: number; img: string; discount:number; livraison: boolean; Qte: number; }>)=>{ 
-        const index=state.ShopedItems.length
-            state.ShopedItems.push({id: index,...action.payload})
+       AddItem:(state, action: PayloadAction<{ id:number;nom: string; prix: number; img: string; promotion:number; frais_livraison: number; Qte: number; }>)=>{ 
+        let index=state.ShopedItems.length-1
+        let exist=false
+        while (index>=0 && !exist) {
+          console.log('id:',action.payload.id);
+          
+          state.ShopedItems[index].id==action.payload.id ? exist=true : index-- ;
+         
+          
+        }
+        exist ?  state.ShopedItems[index].Qte=state.ShopedItems[index].Qte+action.payload.Qte
+        :   state.ShopedItems.push({...action.payload}) 
+          
                },  
     }
 });
 
 
-export const {MinusQte,AddQte,Delete}= ShopSlice.actions
+export const {MinusQte,AddQte,Delete,AddItem}= ShopSlice.actions
 export default ShopSlice.reducer;

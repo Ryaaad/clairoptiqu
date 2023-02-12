@@ -7,11 +7,12 @@ interface props{
     name:String,
     discount:GLfloat,
     price:GLfloat,
-    freeShiping:boolean,
+    freeShiping:number,
     details:String
 }
 
 const ProductCard:React.FC<props> = (props) => {
+    const direction=useSelector((state:any)=>state.main.dir)
     const currency=useSelector((state:any)=>state.main.Lang.Money)
     const Lang=useSelector((state:any)=>state.main.Lang.Landing.Card.Livraison)
     return ( 
@@ -28,11 +29,12 @@ const ProductCard:React.FC<props> = (props) => {
             <div className="text bg-white p-3 py-2 rounded-bl-[20px] rounded-br-[20px]">
                 <div className="flex justify-between items-center">
                     <h3 className="text-[#4D4D81] text-xl lg:text-2xl font-bold">{props.name}</h3>
-                    {props.discount>0 &&<p className="bg-[#ff343748] text-[#E00409] font-semibold text-[16px] lg:text-lg rounded-lg px-2 py-[1px]">-{props.discount}%</p>}
+                    {props.discount>0 && direction &&<p className={`bg-[#ff343748] flex   text-[#E00409] font-semibold text-[16px] lg:text-lg rounded-lg px-2 py-[1px]`}>- {props.discount}%</p>}
+                    {props.discount>0 && !direction &&<p className={`bg-[#ff343748] flex   text-[#E00409] font-semibold text-[16px] lg:text-lg rounded-lg px-2 py-[1px]`}>{props.discount}%-</p>}
                 </div>
                 <div className="liv flex py-2">
-                    {!props.freeShiping && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-[16px] lg:text-lg rounded-lg px-3 py-[1px]">{Lang.NotFree}</p>}
-                    {props.freeShiping && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[16px] lg:text-lg rounded-lg px-3 py-[1px]">{Lang.Free}</p>}
+                    {props.freeShiping > 0  && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-[16px] lg:text-lg rounded-lg px-3 py-[1px]">{Lang.NotFree}</p>}
+                    {(props.freeShiping == 0) && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[16px] lg:text-lg rounded-lg px-3 py-[1px]">{Lang.Free}</p>}
                 </div>
                 <div className="flex justify-between items-center">
                     <p className="text-[#4D4D81] text-xl lg:text-2xl font-bold">{props.price} {currency} </p>
@@ -53,8 +55,8 @@ const ProductCard:React.FC<props> = (props) => {
                     {props.discount>0 &&<p className="bg-[#ff343748] text-[#E00409] font-semibold text-[13px] rounded-sm px-1">-{props.discount}%</p>}
                 </div>
                 <div className="liv flex py-2">
-                    {!props.freeShiping && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-sm rounded-sm px-1">{Lang.NotFree}</p>}
-                    {props.freeShiping && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-sm rounded-sm px-1">{Lang.Free}</p>}
+                    {props.freeShiping>0 && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-sm rounded-sm px-1">{Lang.NotFree}</p>}
+                    {props.freeShiping === 0 && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-sm rounded-sm px-1">{Lang.Free}</p>}
                 </div>
                 <div className="flex gap-1 items-center">
 
