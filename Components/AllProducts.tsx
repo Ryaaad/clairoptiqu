@@ -225,15 +225,15 @@ const Products = () => {
             <SideNav category={filterCategory} />
         </div>
             <div className="p-2">
-                    <div className="h-[33px] sm:h-[50px] bg-[#F3F4F7] text-[#00000050] w-full flex items-center rounded-3xl p-2  sm:p-4 justify-between">
-                        <input type="text" className="w-[100%] bg-transparent outline-none " placeholder={Search} onChange={(e)=>{Filter(e)}}/>
+                    <div className="h-[30px] mt-2 sm:h-[50px] bg-[#F3F4F7] text-[#00000050] w-full flex items-center rounded-3xl p-2  sm:p-4 justify-between">
+                        <input type="text" className="w-[100%] bg-transparent outline-none " placeholder="search" onChange={(e)=>{Filter(e)}}/>
                         <AiOutlineSearch className="text-[#E00409] h-[21px] w-[21px]"></AiOutlineSearch>
                     </div>
             </div> 
         <div className='sm:hidden'>
                 
             <div className='flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
-                        {coinsData && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-4 gap-y-8 items-center p-2'>
+                        {coinsData && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-5 items-center p-2'>
                     {
                     coinsData.map((card:any)=>{
                         return <ProductCard id={card.id} name={card.nom} discount={card.promotion} price={card.prix} freeShiping={card.frais_livraison} details={card.description} ></ProductCard>
@@ -253,7 +253,7 @@ const Products = () => {
             <SideNav category={filterCategory} />
                 
                 <div className='flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
-            {currentPosts && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-4 gap-y-8 items-center p-2'>
+            {currentPosts && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-58 items-center p-2'>
                 {currentPosts.map((card:any)=>{
                     return <ProductCard id={card.id} name={card.nom} discount={card.promotion} price={card.prix} freeShiping={card.frais_livraison} details={card.description} ></ProductCard>
                 })}
