@@ -16,9 +16,9 @@ const Pannier = () => {
           <h1  className=" text-center font-[600] text-[35px] text-[#E00409] max-md:text-[25px] max-sm:text-[20px] " > {LangPannier.Title}</h1>
           <FiX  className=" text-[#e00408b0] text-4xl  cursor-pointer hover:text-[#E00409] absolute right-[2%] top-[8%] translate-y-[-50%] max-md:text-3xl max-sm:text-2xl  " 
           onClick={()=>dispatch(ClickerPannier())} ></FiX>
-    <div className={`grid h-[290px] px-2 max-md:h-[220px] max-md:px-1 ${ShopedItems.length>2 && 'overflow-y-scroll' } `}>
+    <div className={`grid h-[290px] px-2 max-md:h-[220px] max-md:px-1 ${ShopedItems.length>3 && 'overflow-y-scroll' } `}>
       {ShopedItems.map((Item:any)=>{
-        return <CardP key={Item.id} {...Item} ></CardP>
+        return  Item.id!=-1 && <CardP key={Item.id} {...Item} ></CardP>
       })  
       }
     </div> 

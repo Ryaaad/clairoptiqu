@@ -6,14 +6,24 @@ import ProductCard from './productCard';
 import Pagination from './pagination';
 import axios from 'axios';
 
+// interface props{
+//     id:Number,
+//     name:String,
+//     discount:GLfloat,
+//     price:GLfloat,
+//     freeShiping:boolean,
+//     details:String
+// }
 interface props{
-    id:Number,
-    name:String,
-    discount:GLfloat,
-    price:GLfloat,
-    freeShiping:boolean,
-    details:String
+  id:Number,
+  nom:string,
+  promotion:number,
+  prix:number,
+  img:'',
+  frais_livraison:number,
+  description:string
 }
+
 const Products = () => {
     
     const getProducts = () => {
