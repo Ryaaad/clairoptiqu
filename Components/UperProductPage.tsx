@@ -17,6 +17,7 @@ interface props{
 }
 
 const UperProductPage:React.FC<props> = (props) => {
+    const direction=useSelector((state:any)=>state.main.dir)
     const currency=useSelector((state:any)=>state.main.Lang.Money)
     const dispatch=useDispatch()
     const Lang=useSelector((state:any)=>state.main.Lang.Landing.Card.Livraison)
@@ -78,7 +79,8 @@ const UperProductPage:React.FC<props> = (props) => {
             <div className="flex gap-2 items-center ">
                     <p className="text-[#4D4D81] text-2xl lg:text-3xl font-bold">{+props.prix} {currency} </p>
                     {props.promotion>0 && <p className="text-[#4D4D8199] font-semibold text-lg lg:text-xl line-through">{(+props.prix + (+props.promotion * +props.prix) / 100).toFixed(2) } {currency} </p>}
-                    {props.promotion>0 &&<p className="bg-[#ff343748] text-[#E00409] font-semibold text-lg lg:text-xl rounded-lg px-2">-{props.promotion}%</p>}
+                    {props.promotion>0 && direction &&<p className="bg-[#ff343748] text-[#E00409] font-semibold text-lg lg:text-xl rounded-lg px-2">-{props.promotion}%</p>}
+                    {props.promotion>0 && !direction &&<p className="bg-[#ff343748] text-[#E00409] font-semibold text-lg lg:text-xl rounded-lg px-2">{props.promotion}%-</p>}
             </div>
             <div className="text-[#4D4D81]  py-2">
                 <h3 className="text-xl lg:text-2xl font-bold">Description:</h3>
@@ -128,7 +130,8 @@ const UperProductPage:React.FC<props> = (props) => {
                     <div className="flex gap-2 items-center ">
                             <p className="text-[#4D4D81] text-xl font-bold">{+props.prix} {currency} </p>
                             {+props.promotion>0 && <p className="text-[#4D4D8199] font-semibold text-lg line-through">{(+props.prix + (+props.promotion * +props.prix) / 100).toFixed(2) } {currency} </p>}
-                            {+props.promotion>0 &&<p className="bg-[#ff343748] text-[#E00409] font-semibold text-lg rounded-lg px-2">-{props.promotion}%</p>}
+                            {+props.promotion>0 && direction && <p className="bg-[#ff343748] text-[#E00409] font-semibold text-lg rounded-lg px-2">-{props.promotion}%</p>}
+                            {+props.promotion>0 && !direction && <p className="bg-[#ff343748] text-[#E00409] font-semibold text-lg rounded-lg px-2">{props.promotion}%-</p>}
                     </div>
                     <div className="text-[#4D4D81]  py-2">
                         <h3 className="text-xl font-bold">Description:</h3>
@@ -136,9 +139,9 @@ const UperProductPage:React.FC<props> = (props) => {
                     </div>
                     <div className="flex gap-1 text-[#4D4D81] items-center">
                         <h3 className="text-lg font-bold">Quantité :</h3> 
-                    <button className="text-[16px] flex items-center justify-center font-semibold bg-[#E4F4FC] w-[20px] h-[20px] rounded-full">+</button>
-                    <p className="text-[16px] font-semibold">1</p>
-                    <button className="text-[16px] flex items-center justify-center font-semibold bg-[#E4F4FC] w-[20px] h-[20px] rounded-full">-</button>
+                    <button className="text-[16px] flex items-center justify-center font-semibold bg-[#E4F4FC] w-[20px] h-[20px] rounded-full" onClick={()=>AddMinus('Add')}>+</button>
+                    <p className="text-[16px] font-semibold">{Qte}</p>
+                    <button className="text-[16px] flex items-center justify-center font-semibold bg-[#E4F4FC] w-[20px] h-[20px] rounded-full" onClick={()=>AddMinus('Minus')}>-</button>
                     </div>
                     <div className="text-[12px] font-bold flex gap-4 items-center justify-end pt-4 px-2">
                     <Link href= {`http://localhost:3000/checkout`}    onClick={()=>AddToPannier()} className="text-[#E00409] border-[2px] border-[#E00409] px-2 py-2 rounded-lg">Acheter maintenant</Link>

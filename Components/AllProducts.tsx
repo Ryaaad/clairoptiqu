@@ -5,6 +5,7 @@ import ProductCard from './productCard';
 import Pagination from './pagination';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 interface props{
   id:Number,
   nom:String,
@@ -217,7 +218,14 @@ const Products = () => {
             console.log(coinsData)
             console.log(cat)
      }
-
+     const router = useRouter();
+     const passedCat = router.query;
+     useEffect(() => {
+      if(passedCat.cat){setCat(passedCat.cat)}
+     }, [passedCat.cat])
+     
+     console.log(passedCat)
+     console.log("top")
     return ( <>
     <div className='mb-2 bg-[#FDFDFD] p-4'>
         <h1 className="text-[#E00409] text-[32px] font-semibold text-center p-2">{Lang}</h1>
@@ -226,7 +234,7 @@ const Products = () => {
         </div>
             <div className="p-2">
                     <div className="h-[30px] mt-2 sm:h-[50px] bg-[#F3F4F7] text-[#00000050] w-full flex items-center rounded-3xl p-2  sm:p-4 justify-between">
-                        <input type="text" className="w-[100%] bg-transparent outline-none " placeholder="search" onChange={(e)=>{Filter(e)}}/>
+                        <input type="text" className="w-[100%] bg-transparent outline-none px-2" placeholder={Search} onChange={(e)=>{Filter(e)}}/>
                         <AiOutlineSearch className="text-[#E00409] h-[21px] w-[21px]"></AiOutlineSearch>
                     </div>
             </div> 

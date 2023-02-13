@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { useSelector } from 'react-redux';
 
 interface state{
   id:Number,
@@ -21,6 +22,7 @@ interface state{
 }
 
 const SwiperProduct= (props:any) => {
+  const direction=useSelector((state:any)=>state.main.dir)
   const data:state[]=[
     {
       id: 1,
@@ -121,7 +123,7 @@ const SwiperProduct= (props:any) => {
             // install Swiper modules
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={0}
-              slidesPerView={4}
+              slidesPerView={3.80}
               navigation={{ prevEl, nextEl }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log('slide change')}
@@ -134,7 +136,7 @@ const SwiperProduct= (props:any) => {
               }
               
             </Swiper>
-            <div className='flex justify-between items-center text-[#07484A]'>
+            <div className={`flex  ${direction ? "flex-row" : "flex-row-reverse"} justify-between items-center text-[#07484A]`}>
                 <div className='bg-[#F9D9DA] p-5 rounded-full' ref={(node) => setPrevEl(node)}><BsArrowLeft></BsArrowLeft></div>
                 <div className='bg-[#E0EFF6] p-5 rounded-full' ref={(node) => setNextEl(node)}><BsArrowRight></BsArrowRight></div>
               </div>
@@ -165,7 +167,7 @@ const SwiperProduct= (props:any) => {
             // install Swiper modules
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={0}
-              slidesPerView={2.5}
+              slidesPerView={2.15}
               navigation={false}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log('slide change')}
