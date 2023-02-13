@@ -226,7 +226,7 @@ const Products = () => {
         </div>
             <div className="p-2">
                     <div className="h-[30px] mt-2 sm:h-[50px] bg-[#F3F4F7] text-[#00000050] w-full flex items-center rounded-3xl p-2  sm:p-4 justify-between">
-                        <input type="text" className="w-[100%] bg-transparent outline-none " placeholder="search" onChange={(e)=>{Filter(e)}}/>
+                        <input type="text" className="w-[100%] bg-transparent outline-none " placeholder={Search} onChange={(e)=>{Filter(e)}}/>
                         <AiOutlineSearch className="text-[#E00409] h-[21px] w-[21px]"></AiOutlineSearch>
                     </div>
             </div> 
