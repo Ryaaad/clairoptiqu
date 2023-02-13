@@ -44,9 +44,17 @@
     "Homme":"For Men",
     "Enfants":"For Kids"
   },
+  "Checkout":{
+    "Title":"Checkout",
+    "Détails":"Payment details",
+    "Nom":"Name",
+    "Prenom":"Last Name",
+    "Adresse":"Address",
+    "Phone":"Phone Number",
+    "ConfirmBTN":"Confirm payment:",
+    "Return":"return"
+  },
   "ProduitsPage":"Our Products",
   "Money":"DA",
   "Search":"Search"
-
-
   }

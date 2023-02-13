@@ -28,10 +28,10 @@ const Navbar= () => {
             <h1 className=' font-[700] text-[26px] cursor-pointer max-lg:text-[22px] max-md:text-[20px] ' >Clair’optique</h1>
           </div>
           <ul className="flex text-[24px] font-[400] gap-[12px] max-lg:text-[18px] max-md:text-[16px] ">
-          <Link href={`/`}  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter(''))} >
+          <Link href={`/`}  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Home'))} >
           <li className={` ${Home && 'underline  font-[600] '} `} >{Lang.Accueil}</li>
           </Link>
-         <Link href={'/Produits'}  className='cursor-pointer '  onClick={()=>dispatch(ChangeRouter(''))} >
+         <Link href={'/Produits'}  className='cursor-pointer '   onClick={()=>dispatch(ChangeRouter('Products'))}  >
          <li className={` ${!Home && 'underline  font-[600] '} `} >{Lang.Produits}</li>
          </Link>
           </ul>
