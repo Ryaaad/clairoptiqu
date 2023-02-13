@@ -17,8 +17,6 @@ const mainSlice = createSlice({
       ChangeRouter:(state,action:PayloadAction<String>)=>{
         if(action.payload=='Products' ) state.Home= false
         else if(action.payload=='Home' ) state.Home= true
-        else
-        state.Home=!state.Home
       },
       ClickerPannier:(state)=>{  
         state.PannierClicked=!state.PannierClicked

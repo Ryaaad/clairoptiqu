@@ -15,8 +15,6 @@ interface props{
 }
 const CardP:React.FC<props> = (props) => {
     const currency=useSelector((state:any)=>state.main.Lang.Money)
-    console.log(props.frais_livraison);
-    
     const dispatch=useDispatch()
     const dir=useSelector((state:any)=>state.main.dir)
     const LangPannier=useSelector((state:any)=>state.main.Lang.Pannier.Card)

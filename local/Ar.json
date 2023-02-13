@@ -43,6 +43,16 @@
       "Homme":"للرجال",
       "Enfants":"للأطفال"
     },
+    "Checkout":{
+    "Title":"الدفع",
+    "Détails":"بيانات الدفع",
+    "Nom":"لقب",
+    "Prenom":"الاسم",
+    "Adresse":"عنوان",
+    "Phone":"رقم الهاتف",
+    "ConfirmBTN":"تأكيد الدفع: ",
+    "Return":"العودة"
+  },
     "ProduitsPage":"منتجاتنا",
     "Money":"دج",
     "Search":"بحث"
