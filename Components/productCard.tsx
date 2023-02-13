@@ -16,7 +16,7 @@ const ProductCard:React.FC<props> = (props) => {
     const currency=useSelector((state:any)=>state.main.Lang.Money)
     const Lang=useSelector((state:any)=>state.main.Lang.Landing.Card.Livraison)
     return ( 
-    <div className="flex justify-center">
+    <div className="flex justify-center z-10">
          <Link href={{
     pathname: `http://localhost:3000/Produits/${props.id}`,
     query: props, // the data
@@ -49,7 +49,7 @@ const ProductCard:React.FC<props> = (props) => {
     pathname: `http://localhost:3000/Produits/${props.id}`,
     query: props, // the data
   }}>
-            <div className="block sm:hidden w-[11rem] rounded-bl-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px]" style={{boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+            <div className="block sm:hidden w-[10rem] rounded-bl-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px]" style={{boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
             <div className="w-full">
                 <img src={img.src} alt=""  className="rounded-tl-[20px] rounded-tr-[20px] w-full" />
             </div>
