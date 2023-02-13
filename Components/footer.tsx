@@ -6,6 +6,9 @@ import {ChangeRouter} from '../feature/main/mainSlice'
 const Footer = () => {
     const Lang=useSelector((state:any)=>state.main.Lang)
     const dispatch=useDispatch()
+    const f={cat:"Femme"}
+    const h={cat:"Homme"}
+    const e={cat:"Enfant"}
     return ( 
         <div className="h-max bg-[rgba(77,77,129,1)] p-[45px] py-[28px]  max-lg:py-[15px] max-lg:px-[25px] text-white max-[550px]:px-[20px] max-[550px]:py-[10px] " >
         <div className="flex items-center gap-2  ">
@@ -36,9 +39,18 @@ const Footer = () => {
                 <div className='flex flex-col gap-3 '>
                     <h1 className='text-[22px] font-[600] max-lg:text-[18px] max-sm:text-[16px] max-[550px]:text-[14px] max-[425px]:text-[12px] ' >{Lang.Footer.Categorie}</h1>
                     <ul className="flex flex-col gap-3  max-sm:text-[14px] max-[550px]:text-[12px] max-[425px]:text-[10px] ">
-                    <li className='cursor-pointer'  >{Lang.Footer.Femme}</li>
-                    <li  className='cursor-pointer' >{Lang.Footer.Homme}</li>
-                    <li  className='cursor-pointer' >{Lang.Footer.Enfants}</li>
+                    <Link href={{
+    pathname: `http://localhost:3000/Produits`,
+    query: f, // the data
+  }}><li className='cursor-pointer'  >{Lang.Footer.Femme}</li></Link>
+                    <Link href={{
+    pathname: `http://localhost:3000/Produits`,
+    query: h, // the data
+  }}><li  className='cursor-pointer' >{Lang.Footer.Homme}</li></Link>
+                    <Link href={{
+    pathname: `http://localhost:3000/Produits`,
+    query: e, // the data
+  }}><li  className='cursor-pointer' >{Lang.Footer.Enfants}</li></Link>
                    </ul>
                 </div>
                 <div className='flex gap-5 max-lg:flex-col max-lg:gap-1 '>
