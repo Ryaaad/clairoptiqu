@@ -6,6 +6,7 @@ import Pagination from './pagination';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
+import bg from "./../assets/bg.jpg"
 interface props{
   id:Number,
   nom:String,
@@ -227,20 +228,20 @@ const Products = () => {
      console.log(passedCat)
      console.log("top")
     return ( <>
-    <div className='mb-2 bg-[#FDFDFD] p-4'>
+    <div className='mb-2 relative bg-[#FDFDFD] p-4'>
         <h1 className="text-[#E00409] text-[32px] font-semibold text-center p-2">{Lang}</h1>
         <div className='sm:hidden'>
             <SideNav category={filterCategory} />
         </div>
             <div className="p-2">
-                    <div className="h-[30px] mt-2 sm:h-[50px] bg-[#F3F4F7] text-[#00000050] w-full flex items-center rounded-3xl p-2  sm:p-4 justify-between">
+                    <div className="h-[30px] mt-2 sm:h-[50px] bg-[#F3F4F7] text-[#00000050] w-full flex items-center rounded-3xl p-2 mb-1  sm:p-4 justify-between">
                         <input type="text" className="w-[100%] bg-transparent outline-none px-2" placeholder={Search} onChange={(e)=>{Filter(e)}}/>
                         <AiOutlineSearch className="text-[#E00409] h-[21px] w-[21px]"></AiOutlineSearch>
                     </div>
             </div> 
-        <div className='sm:hidden'>
+        <div className='sm:hidden z-[2]'>
                 
-            <div className='flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
+            <div className='z-[2] flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
                         {coinsData && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-5 items-center p-2'>
                     {
                     coinsData.map((card:any)=>{
@@ -257,11 +258,11 @@ const Products = () => {
             </div>
 
         </div>
-        <div className='hidden sm:flex gap-4'>
+        <div className='hidden z-[2] sm:flex gap-4'>
             <SideNav category={filterCategory} />
                 
-                <div className='flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
-            {currentPosts && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-58 items-center p-2'>
+                <div className='z-[2] flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
+            {currentPosts && <div className='grid-cols-2 z-[4] grid lg:grid-cols-3 w-full gap-5 gap-y-58 items-center p-2'>
                 {currentPosts.map((card:any)=>{
                     return <ProductCard id={card.id} name={card.nom} discount={card.promotion} price={card.prix} freeShiping={card.frais_livraison} details={card.description} ></ProductCard>
                 })}
@@ -274,6 +275,9 @@ const Products = () => {
            />
         </div>
 
+        </div>
+        <div className='w-[300px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] absolute  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  z-[0]'>
+                <img src={bg.src} alt="" className='w-full'/>
         </div>
     </div>
     </> );

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 const SideNav = (props: { category: (arg0: String) => void; }) => {
     const LangCategory=useSelector((state:any)=>state.main.Lang.SideNav)
     return ( 
-    <div >
+    <div className="z-[2]" >
         <div className="hidden sm:block text-white bg-[#4D4D81]  sm:w-[160xp] lg:w-[200px] rounded-tl-2xl rounded-br-2xl min-h-[400px] h-[calc(100%-90px)] py-4 px-8">
             <h1 className="sm:text-xl lg:text-[25px] sm:mb-[20px] lg:mb-[30px] font-bold cursor-pointer" onClick={()=>{props.category("")}}>{LangCategory.Categorie}</h1>
             <ul className= "sm:text-[16px] sm:gap-4 lg:text-lg  flex flex-col lg:gap-8" >

@@ -16,7 +16,7 @@ const Pagination=(props:any)=> {
         if(props.currentPage<pages.length) props.setCurrentPage(props.currentPage + 1)
     }
   return (
-    <div className={`flex ${direction ? "flex-row" : "flex-row-reverse"} justify-between sm:justify-end sm:gap-3 py-2 font-semibold text-[#4D4D81CC] w-[40%] sm:w-[300px] self-end items-center`}>
+    <div className={`flex ${direction ? "flex-row" : "flex-row-reverse"}  gap-1 justify-end sm:gap-3 py-2 font-semibold text-[#4D4D81CC] w-[40%] sm:w-[300px] self-end items-center`}>
     <div className='bg-[#F9D9DA] p-2 sm:p-4 rounded-full group hover:bg-[#fcd2d4] hover:cursor-pointer' onClick={()=>{prev()}}><BsArrowLeft className='group-hover:text-black text-sm sm:text-lg'></BsArrowLeft></div>
     <div className='text-sm sm:text-xl flex gap-[2px]'>
        {pages.map(page=>{
