@@ -222,7 +222,7 @@ const Products = () => {
      const router = useRouter();
      const passedCat = router.query;
      useEffect(() => {
-      if(passedCat.cat){setCat(passedCat.cat)}
+      if(passedCat.cat){setCat(passedCat.cat as string)}
      }, [passedCat.cat])
      
      console.log(passedCat)
@@ -276,9 +276,9 @@ const Products = () => {
         </div>
 
         </div>
-        <div className='w-[300px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] absolute  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  z-[0]'>
+        {/* <div className='w-[300px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] absolute  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  z-[0]'>
                 <img src={bg.src} alt="" className='w-full'/>
-        </div>
+        </div> */}
     </div>
     </> );
 }

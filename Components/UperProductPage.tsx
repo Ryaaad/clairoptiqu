@@ -17,8 +17,10 @@ interface props{
 }
 
 const UperProductPage:React.FC<props> = (props) => {
-    const direction=useSelector((state:any)=>state.main.dir)
+    const direction=useSelector((state:any)=>state.main.dir) 
+    
     const currency=useSelector((state:any)=>state.main.Lang.Money)
+    const ProductID=useSelector((state:any)=>state.main.Lang.ProductID)
     const dispatch=useDispatch()
     const Lang=useSelector((state:any)=>state.main.Lang.Landing.Card.Livraison)
     const [Qte, setQte] = useState(1)
@@ -83,20 +85,20 @@ const UperProductPage:React.FC<props> = (props) => {
                     {props.promotion>0 && !direction &&<p className="bg-[#ff343748] text-[#E00409] font-semibold text-lg lg:text-xl rounded-lg px-2">{props.promotion}%-</p>}
             </div>
             <div className="text-[#4D4D81]  py-2">
-                <h3 className="text-xl lg:text-2xl font-bold">Description:</h3>
+                <h3 className="text-xl lg:text-2xl font-bold">{ProductID.Description}</h3>
                 <p className="text-sm lg:text-xl">{props.description}</p>
             </div>
             <div className="flex gap-1 text-[#4D4D81] items-center">
-                <h3 className="text-lg lg:text-xl font-bold">Quantité :</h3> 
+                <h3 className="text-lg lg:text-xl font-bold">{ProductID.Quantité}</h3> 
                <button className="text-[16px] lg:text-lg font-semibold bg-[#E4F4FC] w-[30px] h-[30px] rounded-full"  onClick={()=>AddMinus('Add')} >+</button>
                <p className="text-[16px] lg:text-lg font-semibold">{Qte}</p>
                <button className="text-[16px] lg:text-lg font-semibold bg-[#E4F4FC] w-[30px] h-[30px] rounded-full" onClick={()=>AddMinus('Minus')} >-</button>
             </div>
             <div className="text-[14px] lg:text-lg font-semibold flex gap-4 items-center justify-end my-2">
-              <Link href= {`http://localhost:3000/checkout`}    onClick={()=>AddToPannier()} className="text-[#E00409] border-[3px] border-[#E00409] px-4 py-2 rounded-lg" >Acheter maintenant</Link>
+              <Link href= {`http://localhost:3000/checkout`}    onClick={()=>AddToPannier()} className="text-[#E00409] border-[3px] border-[#E00409] px-4 py-2 rounded-lg" >{ProductID.Acheter_maintenant}</Link>
                 <button className="bg-[#E00409] border-[3px] border-[#E00409] text-white px-4 py-2 rounded-lg flex gap-1 items-center" 
     onClick={()=>AddToPannier()}
-                >Ajouter au panier <HiOutlineShoppingCart></HiOutlineShoppingCart></button>
+                >{!direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} {ProductID.Ajouter_au_panier} {direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} </button>
             </div>
         </div>
     </div> 
@@ -134,20 +136,20 @@ const UperProductPage:React.FC<props> = (props) => {
                             {+props.promotion>0 && !direction && <p className="bg-[#ff343748] text-[#E00409] font-semibold text-lg rounded-lg px-2">{props.promotion}%-</p>}
                     </div>
                     <div className="text-[#4D4D81]  py-2">
-                        <h3 className="text-xl font-bold">Description:</h3>
+                        <h3 className="text-xl font-bold">{ProductID.Description}</h3>
                         <h5 className="text-[16px] ">{props.description}</h5>
                     </div>
                     <div className="flex gap-1 text-[#4D4D81] items-center">
-                        <h3 className="text-lg font-bold">Quantité :</h3> 
+                        <h3 className="text-lg font-bold">{ProductID.Quantité}</h3> 
                     <button className="text-[16px] flex items-center justify-center font-semibold bg-[#E4F4FC] w-[20px] h-[20px] rounded-full" onClick={()=>AddMinus('Add')}>+</button>
                     <p className="text-[16px] font-semibold">{Qte}</p>
                     <button className="text-[16px] flex items-center justify-center font-semibold bg-[#E4F4FC] w-[20px] h-[20px] rounded-full" onClick={()=>AddMinus('Minus')}>-</button>
                     </div>
                     <div className="text-[12px] font-bold flex gap-4 items-center justify-end pt-4 px-2">
-                    <Link href= {`http://localhost:3000/checkout`}    onClick={()=>AddToPannier()} className="text-[#E00409] border-[2px] border-[#E00409] px-2 py-2 rounded-lg">Acheter maintenant</Link>
+                    <Link href= {`http://localhost:3000/checkout`}    onClick={()=>AddToPannier()} className="text-[#E00409] border-[2px] border-[#E00409] px-2 py-2 rounded-lg">{ProductID.Acheter_maintenant}</Link>
                         <button className="bg-[#E00409] border-[2px] border-[#E00409] text-white px-2 py-2 rounded-lg flex gap-2 items-center"
                            onClick={()=>AddToPannier()}
-                        >Ajouter au panier <HiOutlineShoppingCart></HiOutlineShoppingCart></button>
+                        >  {!direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} {ProductID.Ajouter_au_panier} {direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} </button>
                     </div>
                 </div>
             </div> 

@@ -53,6 +53,12 @@
     "ConfirmBTN":"تأكيد الدفع: ",
     "Return":"العودة"
   },
+  "ProductID":{
+    "Acheter_maintenant":"اشتري الآن",
+    "Ajouter_au_panier":"أضف إلى السلة",
+    "Description":"وصف :",
+          "Quantité":"كمية:"
+  },
     "ProduitsPage":"منتجاتنا",
     "Money":"دج",
     "Search":"بحث"

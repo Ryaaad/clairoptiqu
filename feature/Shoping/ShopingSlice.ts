@@ -29,7 +29,6 @@ const ShopSlice = createSlice({
                state.Total+=element.prix*element.Qte
            });
         }
-    // 
          }, 
       MinusQte:(state, action: PayloadAction<number>)=>{  
             for (let index = 0; index < state.ShopedItems.length; index++) {
@@ -53,6 +52,10 @@ const ShopSlice = createSlice({
         state.Total+=element.prix*element.Qte
             });
            },  
+      GetTotal:(state)=>{
+        state.ShopedItems.length>1 ?
+        state.Total=state.ShopedItems[1].prix*state.ShopedItems[1].Qte : ""
+      },
        AddItem:(state, action: PayloadAction<{ id:number;nom: string; prix: number; img: string; promotion:number; frais_livraison: number; Qte: number; }>)=>{ 
         let index=state.ShopedItems.length-1
         let exist=false
@@ -67,9 +70,10 @@ const ShopSlice = createSlice({
         :   state.ShopedItems.push({...action.payload}) 
           
                },  
+      
     }
 });
 
 
-export const {MinusQte,AddQte,Delete,AddItem}= ShopSlice.actions
+export const {MinusQte,AddQte,Delete,AddItem,GetTotal}= ShopSlice.actions
 export default ShopSlice.reducer;

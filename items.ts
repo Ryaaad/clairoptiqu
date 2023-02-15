@@ -1,13 +1,13 @@
 const i=-1
-const Items=[{id:i+1,Name:'Gliter Fame',price:1000,img:'',livraison:false,reduction:80},
-{id:i+1,Name:'Nufftal bane',price:1000,img:'',livraison:true,reduction:80},
-{id:i+1,Name:'Radonimoo',price:1000,img:'',livraison:false,reduction:0},
-{id:i+1,Name:'GFamre',price:1000,img:'',livraison:true,reduction:0},
-{id:i+1,Name:'Jamaciani',price:1000,img:'',livraison:false,reduction:50},{id:i+1,Name:'Fame retilG',price:15100,img:'',livraison:true,reduction:10},
-{id:i+1,Name:'JHgajuf',price:1000,img:'',livraison:false,reduction:80},
-{id:i+1,Name:'Gloter fokam',price:1000,img:'',livraison:true,reduction:10},{id:i+1,Name:'Gliter FFme',price:5000.05,img:'',livraison:true,reduction:0},
-{id:i+1,Name:'Gliter 2D',price:1000,img:'',livraison:true,reduction:80},
-{id:i+1,Name:'kinako',price:1000,img:'',livraison:true,reduction:0},{id:i+1,Name:'Gliter Fome',price:2502.40,img:'',livraison:true,reduction:0},
-{id:i+1,Name:'Gliter 3Fame',price:1000,img:'',livraison:true,reduction:80}];
+const Items=[{id:i+1,name:'Gliter Fame',price:1000,img:'',freeShiping:200,discount:80,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'Nufftal bane',price:1000,img:'',freeShiping:0,discount:80,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'Radonimoo',price:1000,img:'',freeShiping:200,discount:0,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'GFamre',price:1000,img:'',freeShiping:0,discount:0,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'Jamaciani',price:1000,img:'',freeShiping:200,discount:50,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},{id:i+1,name:'Fame retilG',price:15100,img:'',freeShiping:0,discount:10,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'JHgajuf',price:1000,img:'',freeShiping:200,discount:80,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'Gloter fokam',price:1000,img:'',freeShiping:0,discount:10,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},{id:i+1,name:'Gliter FFme',price:5000.05,img:'',freeShiping:0,discount:0,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'Gliter 2D',price:1000,img:'',freeShiping:0,discount:80,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'kinako',price:1000,img:'',freeShiping:0,discount:0,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},{id:i+1,name:'Gliter Fome',price:2502.40,img:'',freeShiping:0,discount:0,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."},
+{id:i+1,name:'Gliter 3Fame',price:1000,img:'',freeShiping:0,discount:80,details:"Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."}];
 
 export default Items

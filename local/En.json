@@ -54,6 +54,12 @@
     "ConfirmBTN":"Confirm payment:",
     "Return":"return"
   },
+  "ProductID":{
+    "Acheter_maintenant":"Buy now",
+    "Ajouter_au_panier":"Add to Cart",
+    "Description":"Description :",
+    "Quantité":"Quantity :"
+  },
   "ProduitsPage":"Our Products",
   "Money":"DA",
   "Search":"Search"

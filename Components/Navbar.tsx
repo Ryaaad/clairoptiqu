@@ -23,10 +23,10 @@ const Navbar= () => {
       <>
         <div  className="h-[81px] flex px-[57px] pr-[73px] items-center justify-between text-[rgba(224,4,9,1)] bg-white
         max-lg:px-[46px] max-md:px-[35px] max-sm:hidden  ">
-          <div className="flex items-center gap-2">
+          <Link href={`/`} className="flex items-center gap-2"  onClick={()=>dispatch(ChangeRouter('Home'))} >
             <img src={logo.src} alt="" className='rounded-full h-[50px] w-[50px] cursor-pointer max-lg:h-[40px] max-lg:w-[40px] max-md:h-[35px] max-md:w-[35px] ' />
             <h1 className=' font-[700] text-[26px] cursor-pointer max-lg:text-[22px] max-md:text-[20px] ' >Clair’optique</h1>
-          </div>
+          </Link>
           <ul className="flex text-[24px] font-[400] gap-[12px] max-lg:text-[18px] max-md:text-[16px] ">
           <Link href={`/`}  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Home'))} >
           <li className={` ${Home && 'underline  font-[600] '} `} >{Lang.Accueil}</li>
@@ -62,9 +62,14 @@ const Navbar= () => {
             <h1 className=' font-[700] text-[22px] cursor-pointer '  >Clair’optique</h1>
           </div>
           </div>
-   {  NavMenu && <ul className="absolute bottom-[-110%] h-[100px] bg-white z-10 p-2 text-[24px] font-[600] max-lg:text-[18px] max-md:text-[16px] text-[#4D4D81] "> 
-   <li className={` cursor-pointer ${Home && ' text-[red]'} `}  >{Lang.Accueil}</li>
-    <li className={` cursor-pointer ${!Home && ' text-[red] '} `}>{Lang.Produits}</li>          
+   {  NavMenu && <ul className="absolute bottom-[-80%] h-[70px] bg-white z-10 p-2 text-[25px] max-lg:text-[18px] max-md:text-[16px] text-[#4D4D81] font-[400] "> 
+      
+    <Link href={`/`}  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Home'))} >
+          <li className={` ${Home && 'underline text-[rgba(224,4,9,1)] font-[600] '} `} >{Lang.Accueil}</li>
+          </Link>
+         <Link href={'/Produits'}  className='cursor-pointer '   onClick={()=>dispatch(ChangeRouter('Products'))}  >
+         <li className={` ${!Home && 'underline text-[rgba(224,4,9,1)] font-[600] '} `} >{Lang.Produits}</li>
+         </Link>
   </ul>}
    
    
@@ -80,7 +85,7 @@ const Navbar= () => {
               <h1  className={` cursor-pointer ${Language=='AR' && 'text-[red]' } `}   
                onClick={()=>{dispatch(ChangeLang('Ar'));setLangMenu(prev=>prev=!prev)}}>العربية</h1>
             </div>}
-            <MdLanguage className='text-[24px]    '  ></MdLanguage>     {dir ? "AR" : "FR"} 
+            <MdLanguage className='text-[24px]    '  ></MdLanguage>     {Language} 
             </div>
             <FaShoppingCart className='text-[24px] cursor-pointer ' onClick={()=>dispatch(ClickerPannier())} ></FaShoppingCart>
           </div>
