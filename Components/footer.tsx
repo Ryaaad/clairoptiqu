@@ -11,10 +11,10 @@ const Footer = () => {
     const e={cat:"Enfant"}
     return ( 
         <div className="h-max bg-[rgba(77,77,129,1)] p-[45px] py-[28px]  max-lg:py-[15px] max-lg:px-[25px] text-white max-[550px]:px-[20px] max-[550px]:py-[10px] " >
-        <div className="flex items-center gap-2  ">
+        <Link href={`/`} className="flex items-center gap-2  "  onClick={()=>dispatch(ChangeRouter('Home'))} >
             <img src={logo.src} alt="" className='rounded-full h-[50px] w-[50px] cursor-pointer max-lg:w-[40px] max-lg:h-[40px] max-[550px]:h-[35px] max-[550px]:w-[35px]  ' />
             <h1 className=' font-[600] text-[26px] cursor-pointer max-lg:text-[22px] max-sm:text-[18px] max-[550px]:text-[17px] ' >Clair’optique</h1>
-        </div>
+        </Link>
         <div className="flex justify-between ">
         <div className='flex flex-col max-w-[320px] mt-3 text-[20px] gap-[15px] max-lg:text-[18px] max-sm:text-[14px] max-[550px]:text-[13px] max-sm:max-w-[150px] max-[425px]:text-[11px] 
       max-[425px]:max-w-[100px]    ' >
@@ -42,15 +42,15 @@ const Footer = () => {
                     <Link href={{
     pathname: `http://localhost:3000/Produits`,
     query: f, // the data
-  }}><li className='cursor-pointer'  >{Lang.Footer.Femme}</li></Link>
+  }}><li className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Products'))}  >{Lang.Footer.Femme}</li></Link>
                     <Link href={{
     pathname: `http://localhost:3000/Produits`,
     query: h, // the data
-  }}><li  className='cursor-pointer' >{Lang.Footer.Homme}</li></Link>
+  }}><li  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Products'))}>{Lang.Footer.Homme}</li></Link>
                     <Link href={{
     pathname: `http://localhost:3000/Produits`,
     query: e, // the data
-  }}><li  className='cursor-pointer' >{Lang.Footer.Enfants}</li></Link>
+  }}><li  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Products'))} >{Lang.Footer.Enfants}</li></Link>
                    </ul>
                 </div>
                 <div className='flex gap-5 max-lg:flex-col max-lg:gap-1 '>

@@ -69,7 +69,7 @@ const checkOut=()=> {
   return (
     <div className={`bg-[#FDFDFD] mb-2 `} >
     <h1 className="text-[#E00409] text-[32px] font-semibold text-center p-4">{Translation.Title}</h1>
-    <div className={`flex flex-col-reverse ${direction ? "md:flex-row" : "md:flex-row-reverse"} gap-5 bg-white p-2 md:p-4 lg:p-10`}>
+    <div className={`flex flex-col-reverse  md:flex-row  gap-5  bg-white p-2 md:p-4 lg:p-10`}>
         <div className="flex basis-[45%] flex-col gap-4 items-center justify-center p-2">
             <h3 className="self-start font-bold text-[20px] lg:text-[30px] text-[#4D4D81] pb-3" onClick={()=>{console.log(Shpoped)}}>{Translation.Détails}</h3>
             <form action="" className="flex w-full  flex-col gap-10">
@@ -80,17 +80,17 @@ const checkOut=()=> {
                 
             </form>
             <div className="pl-2 pt-5 flex gap-4 font-semibold text-[15px] lg:text-[22px]">
-                   <Link href="http://localhost:3000"> <button className="text-[#4D4D81] border-2 px-4 py-1 lg:py-2 border-[#4D4D81] outline-none rounded-md">{Translation.Return}</button></Link>
+                   <Link href="http://localhost:3000"> <button className="text-[#4D4D81] border-2 px-4 py-2 lg:py-3 border-[#4D4D81] outline-none rounded-md">{Translation.Return}</button></Link>
                     <button className="text-white bg-[#4D4D81] px-[3px] py-2 lg:px-3 sm:py-2 border-2 border-[#4D4D81] outline-none rounded-md" onClick={()=>submit()}>{Translation.ConfirmBTN} {Total}</button>
             </div>
         </div>
         <div className="rounded-lg flex flex-col items-center gap-5 bg-[#4D4D81] p-2 w-full sm:p-4 sm:basis-[56%]">
-                <div className='flex flex-col items-center gap-5 w-full'>
+                <div className={`flex flex-col items-center ${Shpoped.length>4 && 'overflow-y-scroll' }  h-[500px]  gap-5 w-full`}>
                     {Shpoped.map((Shpoped)=>{
                         return Shpoped.id!=-1 && <CheckoutCard  nom={Shpoped.nom} frais_livraison={Shpoped.frais_livraison} Qte={Shpoped.Qte} id={Shpoped.id} prix={Shpoped.prix} img={Shpoped.img} promotion={Shpoped.promotion}  />
                     })}
                 </div>
-                <h3 className='text-white  lg:text-[36px] font-bold self-end'>{TranslationTotal} {Total} {currency}</h3>
+                <h3 className=' text-white  lg:text-[36px] font-bold self-end'>{TranslationTotal} {Total} {currency}</h3>
         </div>   
      </div>
 </div>
