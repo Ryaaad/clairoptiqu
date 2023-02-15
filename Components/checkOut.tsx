@@ -69,9 +69,9 @@ const checkOut=()=> {
   return (
     <div className={`bg-[#FDFDFD] mb-2 `} >
     <h1 className="text-[#E00409] text-[32px] font-semibold text-center p-4">{Translation.Title}</h1>
-    <div className={`flex flex-col-reverse  md:flex-row  gap-5  bg-white p-2 md:p-4 lg:p-10`}>
+    <div className={`flex flex-col-reverse md:flex-row gap-5 bg-white p-2 md:p-4 lg:p-10`}>
         <div className="flex basis-[45%] flex-col gap-4 items-center justify-center p-2">
-            <h3 className="self-start font-bold text-[20px] lg:text-[30px] text-[#4D4D81] pb-3" onClick={()=>{console.log(Shpoped)}}>{Translation.Détails}</h3>
+            <h3 className="self-start font-bold text-[20px] lg:text-[30px] text-[#4D4D81] pb-3" >{Translation.Détails}</h3>
             <form action="" className="flex w-full  flex-col gap-10">
                 <input className="w-full py-1 text-[#4D4D81C9] border-b-[1px] border-b-[#4D4D81] outline-none" type="text" placeholder={Translation.Nom} name ="Nom" onChange={(e)=>{setNom(e.target.value)}}/>
                 <input className="w-full py-1 text-[#4D4D81C9] border-b-[1px] border-b-[#4D4D81] outline-none " type="text" placeholder={Translation.Prenom}  name="Prénom" onChange={(e)=>{setPrenom(e.target.value)}}/>
@@ -81,7 +81,7 @@ const checkOut=()=> {
             </form>
             <div className="pl-2 pt-5 flex gap-4 font-semibold text-[15px] lg:text-[22px]">
                    <Link href="http://localhost:3000"> <button className="text-[#4D4D81] border-2 px-4 py-2 lg:py-3 border-[#4D4D81] outline-none rounded-md">{Translation.Return}</button></Link>
-                    <button className="text-white bg-[#4D4D81] px-[3px] py-2 lg:px-3 sm:py-2 border-2 border-[#4D4D81] outline-none rounded-md" onClick={()=>submit()}>{Translation.ConfirmBTN} {Total}</button>
+                    <button className="text-white bg-[#4D4D81] px-[3px] py-2 lg:px-3 sm:py-2 border-2 border-[#4D4D81] outline-none rounded-md" onClick={()=>submit()}>{Translation.ConfirmBTN} {Total} {currency}</button>
             </div>
         </div>
         <div className="rounded-lg flex flex-col items-center gap-5 bg-[#4D4D81] p-2 w-full sm:p-4 sm:basis-[56%]">

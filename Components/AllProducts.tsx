@@ -225,10 +225,8 @@ const Products = () => {
       if(passedCat.cat){setCat(passedCat.cat as string)}
      }, [passedCat.cat])
      
-     console.log(passedCat)
-     console.log("top")
     return ( <>
-    <div className='mb-2 relative bg-[#FDFDFD] p-4'>
+    <div className=' relative bg-[#FDFDFD] p-4'>
         <h1 className="text-[#E00409] text-[32px] font-semibold text-center p-2">{Lang}</h1>
         <div className='sm:hidden'>
             <SideNav category={filterCategory} />
@@ -242,9 +240,9 @@ const Products = () => {
         <div className='sm:hidden z-[2]'>
                 
             <div className='z-[2] flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
-                        {coinsData && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-5 items-center p-2'>
+                        {currentPosts && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-5 items-center p-2'>
                     {
-                    coinsData.map((card:any)=>{
+                    currentPosts.map((card:any)=>{
                         return <ProductCard id={card.id} name={card.nom} discount={card.promotion} price={card.prix} freeShiping={card.frais_livraison} details={card.description} ></ProductCard>
                     })
                     }

@@ -1,5 +1,7 @@
 import { AiFillStar } from "react-icons/Ai";
 import img from "../assets/img2.png"
+import img2 from "../assets/glaces.png"
+import img3 from "../assets/img.png"
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import {AddItem} from '../feature/Shoping/ShopingSlice'
@@ -50,23 +52,26 @@ const UperProductPage:React.FC<props> = (props) => {
         dispatch(AddItem(Item))
     }
 
-    
+   const [CurrentImg, setCurrentImg] = useState(img)
+   const handelImg=(Data:any)=>{
+   setCurrentImg(Data)
+   }
     return ( 
         <div>
-            <div className="hidden sm:flex bg-white gap-6 pl-8 py-2 rounded-lg mb-4">
+            <div className="hidden sm:flex bg-white gap-6 p-4 py-4 rounded-lg mb-4">
        <div className="img flex flex-col gap-4">
         <div className="sm:w-[400px] lg:w-[530px] ">
-            <img src={img.src} alt="img2"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />
+            <img src={CurrentImg.src} alt="img2"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />
         </div>
         <div className="imgs flex justify-between">
-            <div className="sm:w-[100px] lg:w-[125px]"><img src={img.src} alt="pos1" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-            <div className="sm:w-[100px] lg:w-[125px]"><img src={img.src} alt="pos2" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-            <div className="sm:w-[100px] lg:w-[125px]"><img src={img.src} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-            <div className="sm:w-[100px] lg:w-[125px]"><img src={img.src} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
+            <div className="sm:w-[100px] lg:w-[125px]"><img src={img.src} alt="p1" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img)} /></div>
+            <div className="sm:w-[100px] lg:w-[125px]"><img src={img2.src} alt="p2" className="rounded-tl-[40px] cursor-pointer  rounded-br-[40px] w-full" onClick={()=>handelImg(img2)} /></div>
+            <div className="sm:w-[100px] lg:w-[125px]"><img src={img3.src} alt="p3" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img3)} /></div>
+            <div className="sm:w-[100px] lg:w-[125px]"><img src={img.src} alt="p4" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img)} /></div>
         </div>
        </div>
        <div className="text">
-            <h3 className="text-[#4D4D81] text-4xl lg:text-5xl font-bold pb-5 lg:pb-10">{props.nom}</h3>
+            <h3 className="text-[#4D4D81] text-4xl lg:text-5xl font-bold pt-1 pb-4 lg:pb-10">{props.nom}</h3>
             <div className="flex gap-1 text-[#FFC107]">
                 <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
                 <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>

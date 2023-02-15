@@ -54,7 +54,7 @@ const Navbar= () => {
         </div>
 
 
-        <div  className="h-[81px] relative flex px-[15px] items-center justify-between text-[rgba(224,4,9,1)] sm:hidden  ">
+        <div  className="h-[80px] relative flex px-[15px] items-center justify-between text-[rgba(224,4,9,1)] sm:hidden bg-white  ">
           <div className='flex gap-2' >
           <img src={Burger.src} alt="" className='cursor-pointer' onClick={()=>setNavMenu(prev=>prev=!prev)} />
           <div className="flex items-center gap-2">
