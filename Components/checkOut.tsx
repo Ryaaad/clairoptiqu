@@ -391,7 +391,7 @@ const checkOut=()=> {
             </form>
         </div>
         <div className="rounded-lg flex flex-col items-center gap-5 bg-[#4D4D81] p-2 w-full sm:p-4 sm:basis-[56%]">
-                <div className={`flex flex-col items-center ${Shpoped.length>4 && 'overflow-y-scroll' }  h-[500px]  gap-5 w-full`}>
+                <div className={`flex flex-col items-center ${Shpoped.length>3 && 'overflow-y-scroll' }  h-[500px]  gap-5 w-full px-2`}>
                     {Shpoped.map((Shpoped)=>{
                         return Shpoped.id!=-1 && <CheckoutCard  nom={Shpoped.nom} frais_livraison={Shpoped.frais_livraison} Qte={Shpoped.Qte} id={Shpoped.id} prix={Shpoped.prix} img={Shpoped.img} promotion={Shpoped.promotion}  />
                     })}
