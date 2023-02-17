@@ -1,11 +1,13 @@
 import React from 'react'
 import GlassMen from '../assets/IMG_0705.jpg'
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from 'react';
+import {ChangeRouter} from '../feature/main/mainSlice'
+import Link from 'next/link';
 
 export default function hero() {
     const Lang=useSelector((state:any)=>state.main.Lang.Hero)
     const dir=useSelector((state:any)=>state.main.dir)
+    const dispatch=useDispatch()
   return (
     <div className='flex justify-end'>
             <div className="w-[1000px] h-[587px] flex justify-end gap-8 items-center text-white bg-[rgba(77,77,129,1)] rounded-tl-[40px] rounded-br-[40px]
@@ -26,13 +28,17 @@ export default function hero() {
                  ${dir ? 'max-lg:text-[15px] max-sm:text-[12px]  max-[550px]:text-[10px] ' 
                   : ' max-lg:text-[17px] max-sm:text-[15px] max-[550px]:text-[14px] '}
                 `} >{Lang.heroP}</p>
-
-                <button className={`text-[22px] h-[47px] px-2 font-[700] bg-[rgba(255,52,57,0.81)] rounded-[10px] max-sm:justify-self-end
+                
+                
+                
+                <Link href={'/Produits'}
+onClick={()=>dispatch(ChangeRouter('Products'))} className={`text-[22px] h-[47px] px-2 font-[700] bg-[rgba(255,52,57,0.81)] rounded-[10px] max-sm:justify-self-end
                  max-lg:text-[18px]  max-lg:h-[40px]  max-md:text-[12px] max-sm:text-[10px] max-md:max-h-[48px] max-sm:max-h-[28px] max-sm:rounded-[5px] max-sm:mt-3 
                  hover:bg-[rgba(233,47,50,0.81)] max-[550px]:text-[9px] max-[550px]:h-[20px]
                   ${dir ? 'max-md:text-[12px] max-sm:text-[10px] max-[550px]:text-[9px]  w-[259px] max-lg:w-[250px] max-md:max-w-[170px] max-sm:max-w-[140px] max-[550px]:max-w-[120px]':
                   'max-md:text-[14px] max-sm:text-[13px] max-[550px]:text-[14px] w-[250px] max-lg:w-[240px] max-md:max-w-[140px] max-sm:max-w-[130px] max-[550px]:max-w-[110px]'}
-                  ` } >{Lang.heroButton}</button>
+                grid justify-center items-center  `} >{Lang.heroButton}</Link>
+            
                </div>
             </div>
   </div>

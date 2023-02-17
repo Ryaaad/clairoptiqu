@@ -1,7 +1,6 @@
 import Card from "./card";
 import { HiArrowRight,HiArrowLeft } from "react-icons/hi";
 import Hero from "./Hero";
-import Items from "../items";
 import {useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import {ChangeRouter} from '../feature/main/mainSlice'

@@ -3,7 +3,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import {AddItem} from '../feature/Shoping/ShopingSlice'
 import {ClickerPannier} from '../feature/main/mainSlice'
-import { useEffect, useState } from "react";
+import { useEffect, useState , useRef } from "react";
 import Link from "next/link";
 interface props{
     id:number,
@@ -38,9 +38,6 @@ const UperProductPage:React.FC<props> = (props) => {
     useEffect(() => {  
       setItem({id:props.id,nom:props.nom,promotion:props.promotion,prix:props.prix,frais_livraison:props.frais_livraison,img:props.img as string,Qte})   
     },[Qte,props])  
-    useEffect(() => {  
-        setQte(1)  
-      },[props]) 
     const AddMinus=(type:string)=>{    
     if(type=='Minus'){
          Qte>1 && setQte(prev=>prev-1);
@@ -51,8 +48,11 @@ const UperProductPage:React.FC<props> = (props) => {
         dispatch(ClickerPannier())
         dispatch(AddItem(Item))
     }
-
-   const [CurrentImg, setCurrentImg] = useState(null)
+   const [CurrentImg, setCurrentImg] = useState<any>(null)
+   useEffect(() => {  
+    setQte(1) 
+    setCurrentImg(props.img)
+  },[props]) 
    const handelImg=(Data:any)=>{
    setCurrentImg(Data)
    console.log(Data)
@@ -61,9 +61,9 @@ const UperProductPage:React.FC<props> = (props) => {
         <div>
             <div className="hidden sm:flex bg-white gap-6 p-4 py-4 rounded-lg mb-4">
        <div className="img flex flex-col gap-4">
-        <div className="sm:w-[400px] lg:w-[530px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]">
-            {!CurrentImg  && <img src={props.img as string} alt="Mainimg"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />}
-            {CurrentImg  && <img src={CurrentImg as string} alt="Mainimg"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />}
+        <div className="sm:w-[400px] sm:h-[380px] lg:w-[530px] lg:h-[500px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]">
+            {!CurrentImg  && <img src={props.img as string} alt="Mainimg"  className="rounded-tl-[40px] rounded-br-[40px] w-full h-full" />}
+            {CurrentImg  && <img src={CurrentImg as string} alt="Mainimg"  className="rounded-tl-[40px] rounded-br-[40px] w-full h-full" />}
         </div>
         <div className="imgs flex justify-between">
             <div className="sm:w-[100px] lg:w-[125px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="p1" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full h-full" onClick={()=>handelImg(props.img)} /></div>
