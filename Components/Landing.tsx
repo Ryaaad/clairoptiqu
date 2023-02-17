@@ -17,7 +17,7 @@ useEffect(() => {
     fetch('http://localhost:8000/api/v1/products/')
     .then((res) => res.json())
     .then((data) => {
-      dispatch(SetLatest(data.results))
+      dispatch(SetLatest(data))
     });
 
  
