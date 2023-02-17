@@ -51,7 +51,10 @@
     "Adresse":"عنوان",
     "Phone":"رقم الهاتف",
     "ConfirmBTN":"تأكيد الدفع: ",
-    "Return":"العودة"
+    "Return":"العودة",
+    "Valide_Cmd":"تم إجراء طلبك",
+    "réessayer":"حاول ثانية",
+    "Err":"خطأ"
   },
   "ProductID":{
     "Acheter_maintenant":"اشتري الآن",

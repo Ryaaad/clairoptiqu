@@ -1,24 +1,59 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-// import ShopedItems from '../../ShopedItems';
+
+let All:any;
+
 const initialState = {
-  ShopedItems:[ {
+ShopedItems:[ {
     id: -1,
     nom: '',
     prix: 0,
     img: '',
     promotion:0,
-    frais_livraison: 0,
+    frais_livraison: false,
     Qte: 0
 }],
+Allproduct:[
+    {
+      id: 1,
+      nom: "Homme",
+      promotion: 36,
+      prix: 3455,
+      frais_livraison: 0,
+      description: "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi",
+      get_absolute_url:"Homme",
+      get_image: "http://127.0.0.1:8000/media/uploads/lunn_e2bnYzQ.jpg",
+      get_image2: "",
+      get_thumbnail: "http://127.0.0.1:8000/media/uploads/lunn_fgDyfxG.jpg",
+      brand:"",
+    },
+    {
+      id: 2,
+      nom: "Homme",
+      promotion: 84,
+      prix: 6568,
+      frais_livraison: 200,
+      description: "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+      get_absolute_url:"Homme",
+      get_image: "http://127.0.0.1:8000/media/uploads/lunn_e2bnYzQ.jpg",
+      get_image2: "",
+      get_thumbnail: "http://127.0.0.1:8000/media/uploads/lunn_fgDyfxG.jpg",
+      brand:"",
+  }
+  ],
+Latest:All,
   Total:0,
 };
-
-
 
 const ShopSlice = createSlice({
     name: 'Shop',
     initialState,
     reducers: {
+      SetAllProduct:(state, action: PayloadAction<any>)=>{
+        state.Allproduct=action.payload
+      },
+      SetLatest:(state, action: PayloadAction<any>)=>{
+        state.Latest=action.payload
+      },
       // ShopedItems actions
       AddQte:(state, action: PayloadAction<number>)=>{  
         for (let index = 0; index < state.ShopedItems.length; index++) {
@@ -53,27 +88,30 @@ const ShopSlice = createSlice({
             });
            },  
       GetTotal:(state)=>{
-        state.ShopedItems.length>1 ?
-        state.Total=state.ShopedItems[1].prix*state.ShopedItems[1].Qte : ""
+       if( state.ShopedItems.length>1 ) {  state.Total=0;
+        state.ShopedItems.forEach((element:any) => {
+        state.Total+=element.prix*element.Qte
+            });}
       },
-       AddItem:(state, action: PayloadAction<{ id:number;nom: string; prix: number; img: string; promotion:number; frais_livraison: number; Qte: number; }>)=>{ 
+       AddItem:(state, action: PayloadAction<{ id:number;nom: string; prix: number; img: string; promotion:number; frais_livraison: boolean; Qte: number; }>)=>{ 
+
         let index=state.ShopedItems.length-1
         let exist=false
-        while (index>=0 && !exist) {
-          console.log('id:',action.payload.id);
-          
-          state.ShopedItems[index].id==action.payload.id ? exist=true : index-- ;
+        while (index>=0 && !exist)  state.ShopedItems[index].id==action.payload.id ? exist=true : index-- ;
          
-          
-        }
         exist ?  state.ShopedItems[index].Qte=state.ShopedItems[index].Qte+action.payload.Qte
         :   state.ShopedItems.push({...action.payload}) 
-          
-               },  
+        // state.ShopedItems[index].Qte=state.ShopedItems[index].Qte+1 
+        // state.ShopedItems[index].Qte=state.ShopedItems[index].Qte-1
+        !exist && console.log(action.payload.Qte*action.payload.prix);
+        
+     !exist ?  state.Total=state.Total+action.payload.Qte*action.payload.prix : "";
+     
+      },  
       
     }
 });
 
 
-export const {MinusQte,AddQte,Delete,AddItem,GetTotal}= ShopSlice.actions
+export const {MinusQte,AddQte,Delete,AddItem,GetTotal,SetAllProduct,SetLatest}= ShopSlice.actions
 export default ShopSlice.reducer;

@@ -52,7 +52,11 @@
     "Adresse":"Adresse",
     "Phone":"Numéro de téléphone",
     "ConfirmBTN":"Confirmer le paiement :",
-    "Return":"Retour"
+    "Return":"Retour",
+    "Valide_Cmd":"Votre Commande a ete effectuer",
+    "réessayer":"réessayer",
+    "Err":"Error"
+
   },
   "ProductID":{
     "Acheter_maintenant":"Acheter maintenant",

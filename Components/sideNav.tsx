@@ -14,11 +14,11 @@ const SideNav = (props: { category: (arg0: String) => void; }) => {
         </div>
         <div className="sm:hidden w-full flex items-center justify-center">
             <div>
-            <h1 className="text-[20px] mb-2 font-bold text-[#4D4D81] ">{LangCategory.Categorie}</h1>
+            <h1 className="text-[20px] mb-2 font-bold text-[#4D4D81] " onClick={()=>{props.category("")}}>{LangCategory.Categorie}</h1>
             <ul className="text-[16px] flex text-white gap-2" >
-                <li className="bg-[#4D4D81] flex items-center py-2 px-1 rounded-tl-md rounded-br-md" onClick={()=>{props.category('Homme')}}>{LangCategory.Homme}</li>
-                <li className="bg-[#4D4D81] flex items-center py-2 px-1 rounded-tl-md rounded-br-md" onClick={()=>{props.category('Femme')}}>{LangCategory.Femme}</li>
-                <li className="bg-[#4D4D81] flex items-center py-2 px-1 rounded-tl-md rounded-br-md" onClick={()=>{props.category('Enfant')}}>{LangCategory.Enfants}</li>
+                <li className="bg-[#4D4D81] flex items-center py-2 px-1 rounded-tl-md rounded-br-md" onClick={()=>{props.category('homme')}}>{LangCategory.Homme}</li>
+                <li className="bg-[#4D4D81] flex items-center py-2 px-1 rounded-tl-md rounded-br-md" onClick={()=>{props.category('femme')}}>{LangCategory.Femme}</li>
+                <li className="bg-[#4D4D81] flex items-center py-2 px-1 rounded-tl-md rounded-br-md" onClick={()=>{props.category('enfant')}}>{LangCategory.Enfants}</li>
             </ul>
             </div>
         </div>

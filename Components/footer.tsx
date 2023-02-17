@@ -40,15 +40,15 @@ const Footer = () => {
                     <h1 className='text-[22px] font-[600] max-lg:text-[18px] max-sm:text-[16px] max-[550px]:text-[14px] max-[425px]:text-[12px] ' >{Lang.Footer.Categorie}</h1>
                     <ul className="flex flex-col gap-3  max-sm:text-[14px] max-[550px]:text-[12px] max-[425px]:text-[10px] ">
                     <Link href={{
-    pathname: `http://localhost:3000/Produits`,
+    pathname: `/Produits`,
     query: f, // the data
   }}><li className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Products'))}  >{Lang.Footer.Femme}</li></Link>
                     <Link href={{
-    pathname: `http://localhost:3000/Produits`,
+    pathname: `/Produits`,
     query: h, // the data
   }}><li  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Products'))}>{Lang.Footer.Homme}</li></Link>
                     <Link href={{
-    pathname: `http://localhost:3000/Produits`,
+    pathname: `/Produits`,
     query: e, // the data
   }}><li  className='cursor-pointer' onClick={()=>dispatch(ChangeRouter('Products'))} >{Lang.Footer.Enfants}</li></Link>
                    </ul>
