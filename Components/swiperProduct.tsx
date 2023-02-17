@@ -54,7 +54,7 @@ const SwiperProduct= (props:any) => {
             >
               {
                 AllProducts.map((card:any) =>{
-                 return  <SwiperSlide className='p-4' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.frais_livraison} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2}></ProductCard></SwiperSlide>} 
+                 return  <SwiperSlide className='p-4' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3}></ProductCard></SwiperSlide>} 
                 )
               }
               
@@ -78,7 +78,7 @@ const SwiperProduct= (props:any) => {
             >
              {
                 AllProducts.map((card:any)=>{
-                 return  <SwiperSlide className='p-2' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.frais_livraison} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2}></ProductCard></SwiperSlide>
+                 return  <SwiperSlide className='p-2' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3}></ProductCard></SwiperSlide>
                 })
               }
             </Swiper>}
@@ -98,7 +98,7 @@ const SwiperProduct= (props:any) => {
             >
               {
                 AllProducts.map((card:any)=>{
-                  return  <SwiperSlide className='p-1' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.frais_livraison} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2}></ProductCard></SwiperSlide>
+                  return  <SwiperSlide className='p-1' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3}></ProductCard></SwiperSlide>
                 })
               }
             </Swiper>}

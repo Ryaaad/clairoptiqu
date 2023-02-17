@@ -12,6 +12,7 @@ interface props{
     img:String,
     img1:String,
     img2:String,
+    img3:String,
     brand:String
 }
 
@@ -27,8 +28,8 @@ const ProductCard:React.FC<props> = (props) => {
   }}>
          {/* state={props} */}
          <div className="hidden sm:block sm:w-[250px] lg:w-[240px] xl:w-[310px] rounded-bl-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px]" style={{boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
-           <div className="w-full">
-             <img src={props.img as string} alt=""  className="rounded-tl-[20px] rounded-tr-[20px] w-full" />
+           <div className="w-full h-[25vw]">
+             <img src={props.img as string} alt="img"  className="rounded-tl-[20px] rounded-tr-[20px] w-full h-full" />
            </div>
             <div className="text bg-white p-3 py-2 rounded-bl-[20px] rounded-br-[20px]">
                 <div className="flex justify-between items-center">
