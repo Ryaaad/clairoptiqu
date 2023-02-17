@@ -17,6 +17,7 @@ interface props{
   img:String,
   img1:String,
   img2:String,
+  img3:String,
   livraison_gratuit:boolean,
   description:String,
   category:String
@@ -115,7 +116,7 @@ const Products = () => {
                       {currentPosts && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-5 items-center p-2'>
                   {
                   currentPosts.map((card:any)=>{
-                      return <ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.frais_livraison} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} ></ProductCard>
+                      return <ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} ></ProductCard>
                   })
                   }
               </div>}
@@ -134,7 +135,7 @@ const Products = () => {
               <div className='z-[2] flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
           {currentPosts && <div className='grid-cols-2 z-[4] grid lg:grid-cols-3 w-full gap-5 gap-y-58 items-center p-2'>
               {currentPosts.map((card:any)=>{
-                  return <ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.frais_livraison} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2}></ProductCard>
+                  return <ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3}></ProductCard>
               })}
           </div>}
          <Pagination 

@@ -33,7 +33,7 @@ useEffect(() => {
   { Latest && <div className='grid place-content-center grid-cols-[repeat(4,22vw)] gap-[25px] gap-y-[40px] font-[700] max-lg:grid-cols-[repeat(3,28vw)]  
     max-sm:grid-cols-[repeat(2,30vw)] max-sm:gap-x-[50px] '>
         {Latest.map((card:any)=>{
-            return <Card key={card} id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.frais_livraison} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2}></Card>
+            return <Card key={card} id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2}></Card>
         })}
     </div>}
     <Link href={'/Produits'} className='bg-[rgba(77,77,129,1)] flex gap-[12px] w-[186px] font-[700] rounded-[10px] mx-auto text-[20px]
