@@ -13,8 +13,10 @@ interface props{
     nom:string,
     promotion:number,
     prix:number,
-    img:'',
-    frais_livraison:number,
+    img:String,
+    img1:String,
+    img2:String,
+    frais_livraison:boolean,
     description:String
 }
 
@@ -31,12 +33,12 @@ const UperProductPage:React.FC<props> = (props) => {
         nom:'String',
         promotion:0,
         prix:0,
-        frais_livraison:0,
+        frais_livraison:false,
      img:'',
     Qte:0
 })
     useEffect(() => {  
-      setItem({id:props.id,nom:props.nom,promotion:props.promotion,prix:props.prix,frais_livraison:props.frais_livraison,img:props.img,Qte})   
+      setItem({id:props.id,nom:props.nom,promotion:props.promotion,prix:props.prix,frais_livraison:props.frais_livraison,img:props.img as string,Qte})   
     },[Qte,props])  
     useEffect(() => {  
         setQte(1)  
@@ -60,14 +62,14 @@ const UperProductPage:React.FC<props> = (props) => {
         <div>
             <div className="hidden sm:flex bg-white gap-6 p-4 py-4 rounded-lg mb-4">
        <div className="img flex flex-col gap-4">
-        <div className="sm:w-[400px] lg:w-[530px] ">
-            <img src={CurrentImg.src} alt="img2"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />
+        <div className="sm:w-[400px] lg:w-[530px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]">
+            <img src={props.img as string} alt="img2"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />
         </div>
         <div className="imgs flex justify-between">
-            <div className="sm:w-[100px] lg:w-[125px]"><img src={img.src} alt="p1" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img)} /></div>
-            <div className="sm:w-[100px] lg:w-[125px]"><img src={img2.src} alt="p2" className="rounded-tl-[40px] cursor-pointer  rounded-br-[40px] w-full" onClick={()=>handelImg(img2)} /></div>
-            <div className="sm:w-[100px] lg:w-[125px]"><img src={img3.src} alt="p3" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img3)} /></div>
-            <div className="sm:w-[100px] lg:w-[125px]"><img src={img.src} alt="p4" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img)} /></div>
+            <div className="sm:w-[100px] lg:w-[125px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="p1" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img)} /></div>
+            <div className="sm:w-[100px] lg:w-[125px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img1 as string} alt="p2" className="rounded-tl-[40px] cursor-pointer  rounded-br-[40px] w-full" onClick={()=>handelImg(img2)} /></div>
+            <div className="sm:w-[100px] lg:w-[125px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="p3" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img3)} /></div>
+            <div className="sm:w-[100px] lg:w-[125px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="p4" className="rounded-tl-[40px] cursor-pointer rounded-br-[40px] w-full" onClick={()=>handelImg(img)} /></div>
         </div>
        </div>
        <div className="text">
@@ -79,9 +81,9 @@ const UperProductPage:React.FC<props> = (props) => {
                 <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
                 <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
             </div>
-            <div className="liv flex py-2">
-                    {props.frais_livraison>0 && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.NotFree}</p>}
-                    {props.frais_livraison == 0 && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.Free}</p>}
+            <div className="liv flex gap-2 py-2 text-transparent">
+                    {!props.frais_livraison && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.NotFree}</p>}
+                    {props.frais_livraison && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.Free}</p>}
             </div>
             <div className="flex gap-2 items-center ">
                     <p className="text-[#4D4D81] text-2xl lg:text-3xl font-bold">{+props.prix} {currency} </p>
@@ -99,9 +101,9 @@ const UperProductPage:React.FC<props> = (props) => {
                <p className="text-[16px] lg:text-lg font-semibold">{Qte}</p>
                <button className="text-[16px] lg:text-lg font-semibold bg-[#E4F4FC] w-[30px] h-[30px] rounded-full" onClick={()=>AddMinus('Minus')} >-</button>
             </div>
-            <div className="text-[14px] lg:text-lg font-semibold flex gap-4 items-center justify-end my-2">
-              <Link href= {`http://localhost:3000/checkout`}    onClick={()=>AddToPannier()} className="text-[#E00409] border-[3px] border-[#E00409] px-4 py-2 rounded-lg" >{ProductID.Acheter_maintenant}</Link>
-                <button className="bg-[#E00409] border-[3px] border-[#E00409] text-white px-4 py-2 rounded-lg flex gap-1 items-center" 
+            <div className="text-[13px] lg:text-lg font-semibold flex gap-4 items-center justify-end my-2">
+              <Link href= {`/checkout`}    onClick={()=>  dispatch(AddItem(Item))} className="text-[#E00409] border-[3px] border-[#E00409] px-3 py-2 rounded-lg" >{ProductID.Acheter_maintenant}</Link>
+                <button className="bg-[#E00409] border-[3px] border-[#E00409] text-white px-3 py-2 rounded-lg flex gap-1 items-center" 
     onClick={()=>AddToPannier()}
                 >{!direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} {ProductID.Ajouter_au_panier} {direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} </button>
             </div>
@@ -111,14 +113,14 @@ const UperProductPage:React.FC<props> = (props) => {
 
         <div className="sm:hidden flex flex-col bg-white gap-6 pl-5 py-2 rounded-lg ">
         <div className="img flex flex-col gap-4">
-            <div className="w-[320px]">
-                <img src={img.src} alt="img2"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />
+            <div className="w-[320px] border-[#4D4D81] rounded-tl-[40px] rounded-br-[40px] border-[1px]">
+                <img src={props.img as string} alt="img2"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />
             </div>
             <div className="flex gap-3">
-                <div className="w-[70px]"><img src={img.src} alt="pos1" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-                <div className="w-[70px]"><img src={img.src} alt="pos2" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-                <div className="w-[70px]"><img src={img.src} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-                <div className="w-[70px]"><img src={img.src} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="pos1" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img1 as string} alt="pos2" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
             </div>
         </div>
             <div className="text">
@@ -130,9 +132,9 @@ const UperProductPage:React.FC<props> = (props) => {
                         <AiFillStar className="text-[20px]"></AiFillStar>
                         <AiFillStar className="text-[20px]"></AiFillStar>
                     </div>
-                    <div className="liv flex py-2">
-                            {+props.frais_livraison>0 && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg rounded-lg px-2">{Lang.NotFree}</p>}
-                            {+props.frais_livraison==0 && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg rounded-lg px-2 ">{Lang.Free}</p>}
+                    <div className="liv flex py-2 text-transparent">
+                            {!props.frais_livraison && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg rounded-lg px-2">{Lang.NotFree}</p>}
+                            {props.frais_livraison && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg rounded-lg px-2 ">{Lang.Free}</p>}
                     </div>
                     <div className="flex gap-2 items-center ">
                             <p className="text-[#4D4D81] text-xl font-bold">{+props.prix} {currency} </p>
@@ -151,7 +153,7 @@ const UperProductPage:React.FC<props> = (props) => {
                     <button className="text-[16px] flex items-center justify-center font-semibold bg-[#E4F4FC] w-[20px] h-[20px] rounded-full" onClick={()=>AddMinus('Minus')}>-</button>
                     </div>
                     <div className="text-[12px] font-bold flex gap-4 items-center justify-end pt-4 px-2">
-                    <Link href= {`http://localhost:3000/checkout`}    onClick={()=>AddToPannier()} className="text-[#E00409] border-[2px] border-[#E00409] px-2 py-2 rounded-lg">{ProductID.Acheter_maintenant}</Link>
+                    <Link href= {`/checkout`}    onClick={()=> dispatch(AddItem(Item))} className="text-[#E00409] border-[2px] border-[#E00409] px-2 py-2 rounded-lg">{ProductID.Acheter_maintenant}</Link>
                         <button className="bg-[#E00409] border-[2px] border-[#E00409] text-white px-2 py-2 rounded-lg flex gap-2 items-center"
                            onClick={()=>AddToPannier()}
                         >  {!direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} {ProductID.Ajouter_au_panier} {direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} </button>

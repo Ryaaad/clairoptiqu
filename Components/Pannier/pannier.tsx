@@ -16,7 +16,6 @@ const Pannier = () => {
   const dir=useSelector((state:any)=>state.main.dir)
   const dispatch=useDispatch()
   useEffect(() => {
-    
     dispatch(GetTotal())
   }, [])
   

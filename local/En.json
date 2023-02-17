@@ -52,7 +52,10 @@
     "Adresse":"Address",
     "Phone":"Phone Number",
     "ConfirmBTN":"Confirm payment:",
-    "Return":"return"
+    "Return":"return",
+    "Valide_Cmd":"Your order has been made",
+    "réessayer":"retray",
+    "Err":"Error"
   },
   "ProductID":{
     "Acheter_maintenant":"Buy now",
