@@ -42,7 +42,7 @@ const ProductCard:React.FC<props> = (props) => {
                 </div>
                 <div className="flex justify-between items-center">
                     <p className="text-[#4D4D81] text-xl lg:text-2xl font-bold">{props.price} {currency} </p>
-                    {props.promotion>0 && <p className="text-[#4D4D8199] font-semibold text-lg lg:text-xl line-through">{(props.price + (props.promotion * props.price) / 100).toFixed(2) } {currency} </p>}
+                    {props.promotion>0 && <p className="text-[#4D4D8199] font-semibold text-lg lg:text-xl line-through">{Number((+props.price + (+props.promotion * +props.price) / 100)).toFixed(2)  } {currency} </p>}
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@ const ProductCard:React.FC<props> = (props) => {
                     <div className="flex  items-center">
 
                         <p className="text-[#4D4D81] text-sm font-bold w-full">{props.price} {currency}</p>
-                        {props.promotion>0 && <p className="w-full text-[#4D4D8199] font-semibold text-[11px] line-through">{(props.price + (props.promotion * props.price) / 100).toFixed(2) } {currency}</p>}
+                        {props.promotion>0 && <p className="w-full text-[#4D4D8199] font-semibold text-[11px] line-through">{Number((+props.price + (+props.promotion * +props.price) / 100)).toFixed(2) } {currency}</p>}
 
                     </div>
                 </div>
