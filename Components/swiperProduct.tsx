@@ -29,8 +29,8 @@ const SwiperProduct= (props:any) => {
         fetch('http://localhost:8000/api/v1/products/')
     .then((res) => res.json())
     .then((data1) => {
-      dispatch(SetAllProduct(data1.results))
-      setAllProducts(data1.results)
+      dispatch(SetAllProduct(data1))
+      setAllProducts(data1)
       console.log(AllProduct)
       console.log(AllProducts)
     });

@@ -38,8 +38,8 @@ const Products = () => {
           fetch('http://localhost:8000/api/v1/products/')
       .then((res) => res.json())
       .then((data1) => {
-        dispatch(SetAllProduct(data1.results))
-        setCoinsData(data1.results)
+        dispatch(SetAllProduct(data1))
+        setCoinsData(data1)
         
         console.log(coinsData)
       });
