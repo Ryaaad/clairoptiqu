@@ -14,7 +14,7 @@ interface props{
     img1:String,
     img2:String,
     img3:String,
-    frais_livraison:boolean,
+    frais_livraison:any,
     description:String,
     rate:number,
 }
@@ -92,8 +92,10 @@ const UperProductPage:React.FC<props> = (props) => {
                 }
             </div>
             <div className="liv flex gap-2 py-2 text-transparent">
-                    {props.frais_livraison == "false" && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.NotFree}</p>}
-                    {props.frais_livraison == "true" && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.Free}</p>}
+                    {props.frais_livraison == 'false'  && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.NotFree}</p>}
+                    {props.frais_livraison == false  && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.NotFree}</p>}
+                    {props.frais_livraison == 'true'  && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.Free}</p>}
+                    {props.frais_livraison === true  && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.Free}</p>}
             </div>
             <div className="flex gap-2 items-center ">
                     <p className="text-[#4D4D81] text-2xl lg:text-3xl font-bold">{+props.prix} {currency} </p>
@@ -127,10 +129,10 @@ const UperProductPage:React.FC<props> = (props) => {
                 <img src={props.img as string} alt="img2"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />
             </div>
             <div className="flex gap-3">
-                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="pos1" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img1 as string} alt="pos2" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img2 as string} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
-                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img3 as string} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="pos1" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img1 as string} alt="pos2" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img2 as string} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img3 as string} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
             </div>
         </div>
             <div className="text w-full">
@@ -148,8 +150,10 @@ const UperProductPage:React.FC<props> = (props) => {
                 }
                     </div>
                     <div className="liv flex py-2 text-transparent">
-                            {!props.frais_livraison && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg rounded-lg px-2">{Lang.NotFree}</p>}
-                            {props.frais_livraison && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg rounded-lg px-2 ">{Lang.Free}</p>}
+                            {props.frais_livraison =='false' && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg rounded-lg px-2">{Lang.NotFree}</p>}
+                            {props.frais_livraison ==false && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg rounded-lg px-2">{Lang.NotFree}</p>}
+                            {props.frais_livraison =='true' || props.frais_livraison === true && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg rounded-lg px-2 ">{Lang.Free}</p>}
+                            {props.frais_livraison === true && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg rounded-lg px-2 ">{Lang.Free}</p>}
                     </div>
                     <div className="flex gap-2 items-center ">
                             <p className="text-[#4D4D81] text-xl font-bold">{+props.prix} {currency} </p>
