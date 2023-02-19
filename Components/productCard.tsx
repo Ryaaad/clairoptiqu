@@ -13,7 +13,8 @@ interface props{
     img1:String,
     img2:String,
     img3:String,
-    brand:String
+    brand:String,
+    rate:number,
 }
 
 const ProductCard:React.FC<props> = (props) => {

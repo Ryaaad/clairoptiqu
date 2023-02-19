@@ -15,12 +15,13 @@ interface props{
     img2:String,
     img3:String,
     frais_livraison:boolean,
-    description:String
+    description:String,
+    rate:number,
 }
 
 const UperProductPage:React.FC<props> = (props) => {
     const direction=useSelector((state:any)=>state.main.dir) 
-    
+    console.log(props)
     const currency=useSelector((state:any)=>state.main.Lang.Money)
     const ProductID=useSelector((state:any)=>state.main.Lang.ProductID)
     const dispatch=useDispatch()
@@ -57,6 +58,10 @@ const UperProductPage:React.FC<props> = (props) => {
    setCurrentImg(Data)
    console.log(Data)
    }
+    let arr:number[]=[]
+    for(let i=0 ; i<props.rate ; i++){
+        arr.push(1)
+     }
     return ( 
         <div>
             <div className="hidden sm:flex bg-white gap-6 p-4 py-4 rounded-lg mb-4">
@@ -75,15 +80,20 @@ const UperProductPage:React.FC<props> = (props) => {
        <div className="text w-full">
             <h3 className="text-[#4D4D81] text-4xl lg:text-5xl font-bold pt-1 pb-4 lg:pb-10">{props.nom}</h3>
             <div className="flex gap-1 text-[#FFC107]">
+                {/* <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
                 <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
                 <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
                 <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
-                <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
-                <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
+                <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar> */}
+                {
+                arr.map(ele=>{
+                    return  <AiFillStar key={ele} className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
+                })
+                }
             </div>
             <div className="liv flex gap-2 py-2 text-transparent">
-                    {!props.frais_livraison && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.NotFree}</p>}
-                    {props.frais_livraison && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.Free}</p>}
+                    {props.frais_livraison == "false" && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.NotFree}</p>}
+                    {props.frais_livraison == "true" && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-lg lg:text-xl rounded-lg px-3 ">{Lang.Free}</p>}
             </div>
             <div className="flex gap-2 items-center ">
                     <p className="text-[#4D4D81] text-2xl lg:text-3xl font-bold">{+props.prix} {currency} </p>
@@ -102,8 +112,8 @@ const UperProductPage:React.FC<props> = (props) => {
                <button className="text-[16px] lg:text-lg font-semibold bg-[#E4F4FC] w-[30px] h-[30px] rounded-full" onClick={()=>AddMinus('Minus')} >-</button>
             </div>
             <div className="text-[13px] lg:text-lg font-semibold flex gap-4 items-center justify-end my-2">
-              <Link href= {`/checkout`}    onClick={()=>  dispatch(AddItem(Item))} className="text-[#E00409] border-[3px] border-[#E00409] px-3 py-2 rounded-lg" >{ProductID.Acheter_maintenant}</Link>
-                <button className="bg-[#E00409] border-[3px] border-[#E00409] text-white px-3 py-2 rounded-lg flex gap-1 items-center" 
+              <Link href= {`/checkout`}    onClick={()=>  dispatch(AddItem(Item))} className="text-[#E00409] border-[2px] border-[#E00409] px-3 py-2 rounded-lg" >{ProductID.Acheter_maintenant}</Link>
+                <button className="bg-[#E00409] border-[2px] border-[#E00409] text-white px-3 py-2 rounded-lg flex gap-1 items-center" 
     onClick={()=>AddToPannier()}
                 >{!direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} {ProductID.Ajouter_au_panier} {direction && <HiOutlineShoppingCart></HiOutlineShoppingCart>} </button>
             </div>
@@ -126,11 +136,16 @@ const UperProductPage:React.FC<props> = (props) => {
             <div className="text w-full">
                     <h3 className="text-[#4D4D81] text-xl font-bold">{props.nom}</h3>
                     <div className="flex gap-1 text-[#FFC107]">
+                        {/* <AiFillStar className="text-[20px]"></AiFillStar>
                         <AiFillStar className="text-[20px]"></AiFillStar>
                         <AiFillStar className="text-[20px]"></AiFillStar>
                         <AiFillStar className="text-[20px]"></AiFillStar>
-                        <AiFillStar className="text-[20px]"></AiFillStar>
-                        <AiFillStar className="text-[20px]"></AiFillStar>
+                        <AiFillStar className="text-[20px]"></AiFillStar> */}
+                        {
+                arr.map(ele=>{
+                    return  <AiFillStar key={ele} className="text-[20px]"></AiFillStar>
+                })
+                }
                     </div>
                     <div className="liv flex py-2 text-transparent">
                             {!props.frais_livraison && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-lg rounded-lg px-2">{Lang.NotFree}</p>}
