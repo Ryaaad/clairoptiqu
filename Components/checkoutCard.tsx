@@ -17,14 +17,14 @@ const CheckoutCard:React.FC<props>=(props) =>{
   const currency=useSelector((state:any)=>state.main.Lang.Money)
   return (
     <div className='bg-white flex gap-2 w-full p-2 rounded-lg'>
-        <div className="img w-28 sm:w-32 md:w-36 lg:w-40 "><img className='w-full rounded-tl-[40px] rounded-br-[40px]' src={props.img as string} alt="" /></div>
+        <div className="img w-28 h-28 sm:w-32  sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 "><img className='w-full h-full rounded-tl-[40px] rounded-br-[40px]' src={props.img as string} alt="" /></div>
         <div className="text basis-[70%]">
             <h3 className='font-bold text-[18px] lg:text-[30px] text-[#4D4D81]'>{props.nom}</h3>
            <div className='flex w-full justify-between'>
             <div className='flex flex-col gap-2  py-2  text-transparent'>
                     <h4 className='text-[16px] lg:text-[20px] text-[#4D4D81]'>{Translation.Card.Qte}  {props.Qte}</h4>
                     {!props.frais_livraison && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-[15px] lg:text-lg rounded-lg sm:px-2 py-[1px]">{Translation.Card.Livraison.NotFree}</p>}
-                    {props.frais_livraison  && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[16px] lg:text-lg rounded-lg px-3 py-[1px]">{Translation.Card.Livraison.Free}</p>}
+                    {props.frais_livraison  && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[15px] lg:text-lg rounded-lg sm:px-2 py-[1px]">{Translation.Card.Livraison.Free}</p>}
                         {/* {props.freeShiping && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[16px] lg:text-lg rounded-lg px-3 py-[1px]">{Translation.Card.Livraison.Free}</p>} */}
                 </div>
                 <div className="flex flex-col gap-2 py-2 text-[16px] lg:text-lg text-[#4D4D81] font-semibold ">

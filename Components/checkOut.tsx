@@ -383,7 +383,7 @@ const checkOut=()=> {
 
                             </select>
                 <input className="w-full py-1 text-[#4D4D81C9] border-b-[1px] border-b-[#4D4D81] outline-none " required type="text" placeholder={Translation.Phone} name="Numéro de téléphone" onChange={(e)=>{setTel(e.target.value)}}/>
-                <div className="pl-2 pt-5 flex gap-4 self-end font-semibold text-[15px] lg:text-[22px]" onClick={()=>dispatch(ChangeRouter('Home'))}>
+                <div className="pl-2 pt-5 flex gap-4 self-end font-semibold text-[14px] lg:text-[22px]" onClick={()=>dispatch(ChangeRouter('Home'))}>
                    <Link href="/"  > <button type="button" className="text-[#4D4D81] border-2 px-4 py-2 lg:py-3 border-[#4D4D81] outline-none rounded-md">{Translation.Return}</button></Link>
                     {free && <button className="text-white bg-[#4D4D81] px-[3px] py-2 lg:px-3 sm:py-2 border-2 border-[#4D4D81] outline-none rounded-md" onClick={(e)=>{submit(e)}}>{Translation.ConfirmBTN} {Total} {currency}</button>}
                     {!free && <button className="text-white bg-[#4D4D81] px-[3px] py-2 lg:px-3 sm:py-2 border-2 border-[#4D4D81] outline-none rounded-md" onClick={(e)=>{submit(e)}}>{Translation.ConfirmBTN} {Total+payment} {currency}</button>}

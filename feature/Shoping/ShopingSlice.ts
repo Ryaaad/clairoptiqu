@@ -25,6 +25,7 @@ Allproduct:[
       get_image2: "",
       get_thumbnail: "http://127.0.0.1:8000/media/uploads/lunn_fgDyfxG.jpg",
       brand:"",
+      etoiles:4
     },
     {
       id: 2,
@@ -38,6 +39,7 @@ Allproduct:[
       get_image2: "",
       get_thumbnail: "http://127.0.0.1:8000/media/uploads/lunn_fgDyfxG.jpg",
       brand:"",
+      etoiles:5
   }
   ],
 Latest:All,

@@ -7,13 +7,14 @@ interface props{
     nom:String,
     promotion:number,
     price:GLfloat,
-    frais_livraison:boolean,
+    frais_livraison:Boolean,
     description:String,
     img:String,
     img1:String,
     img2:String,
     img3:String,
-    brand:String
+    brand:String,
+    rate:number,
 }
 
 const ProductCard:React.FC<props> = (props) => {
@@ -55,8 +56,8 @@ const ProductCard:React.FC<props> = (props) => {
     query: props as unknown as string | ParsedUrlQueryInput | null | undefined, // the data
   }}>
             <div className="block sm:hidden w-[10rem] rounded-bl-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px]" style={{boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
-            <div className="w-full">
-                <img src={props.img as string } alt=""  className="rounded-tl-[20px] rounded-tr-[20px] w-full" />
+            <div className="w-full h-[40vw]">
+                <img src={props.img as string } alt=""  className="h-full rounded-tl-[20px] rounded-tr-[20px] w-full" />
             </div>
                 <div className="text bg-white p-2 py-1 rounded-bl-[20px] rounded-br-[20px]">
                     <div className="flex gap-2  justify-between items-center">
