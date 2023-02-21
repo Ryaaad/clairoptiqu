@@ -14,7 +14,7 @@ interface props{
     prix: number,
     img: String,
     promotion: number,
-    frais_livraison: number,
+    frais_livraison: any,
     Qte: number
   }
   
