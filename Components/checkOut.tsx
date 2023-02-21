@@ -305,7 +305,7 @@ const checkOut=()=> {
             if (firstUpdate.current) {
                 firstUpdate.current = false;
             Shpoped.map((item,id)=>{
-                if(item.id != -1 && !item.frais_livraison){
+                if(item.id != -1 && (!item.frais_livraison || item.frais_livraison == 'false') ){
                     setFree(false)
                    
                 }
