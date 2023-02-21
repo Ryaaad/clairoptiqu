@@ -8,7 +8,7 @@ interface props{
     nom:string,
     prix:number,
     img:string,
-    frais_livraison:boolean,
+    frais_livraison:any,
     Qte:number
 }
 const CardP:React.FC<props> = (props) => {
@@ -26,9 +26,11 @@ const CardP:React.FC<props> = (props) => {
           <div>
             <h1  className="text-[24px] font-bold text-[rgba(77,77,129,1)] max-xl:text-[20px] max-lg:text-[16px] max-md:text-[14px] max-sm:text-[13px] max-[500px]:text-[11px] " > {props.nom}  </h1>
         
-             <div className={` flex place-content-center text-transparent px-2 max-sm:px-1 rounded-[10px] max-lg:rounded-[5px] ${props.frais_livraison ? 'bg-[rgba(11,255,6,0.3)]': 'bg-[rgba(255,170,6,0.3)]'} `}>
+             <div className={` flex place-content-center text-transparent px-2 max-sm:px-1 rounded-[10px] max-lg:rounded-[5px] ${props.frais_livraison=='true' ? 'bg-[rgba(11,255,6,0.3)]': 'bg-[rgba(255,170,6,0.3)]'} `}>
           {!props.frais_livraison && <p className='text-[#CE8902] font-[600] text-[18px] max-xl:text-[14px] max-lg:text-[12px] max-sm:text-[10px] max-[550px]:text-[8px]' >{LangPannier.Livraison.NotFree}</p> }
-          {props.frais_livraison && <p className='text-[rgba(2,206,22,1)] font-[600] text-[18px] max-xl:text-[14px] max-lg:text-[12px] max-sm:text-[10px] max-[500px]:text-[8px]' >{LangPannier.Livraison.Free}</p> }
+          {props.frais_livraison == true && <p className='text-[rgba(2,206,22,1)] font-[600] text-[18px] max-xl:text-[14px] max-lg:text-[12px] max-sm:text-[10px] max-[500px]:text-[8px]' >{LangPannier.Livraison.Free}</p> }
+          {props.frais_livraison == 'false' && <p className='text-[#CE8902] font-[600] text-[18px] max-xl:text-[14px] max-lg:text-[12px] max-sm:text-[10px] max-[550px]:text-[8px]' >{LangPannier.Livraison.NotFree}</p> }
+          {props.frais_livraison == 'true' && <p className='text-[rgba(2,206,22,1)] font-[600] text-[18px] max-xl:text-[14px] max-lg:text-[12px] max-sm:text-[10px] max-[500px]:text-[8px]' >{LangPannier.Livraison.Free}</p> }
            </div>
   
           </div >

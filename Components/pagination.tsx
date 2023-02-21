@@ -22,9 +22,9 @@ const Pagination=(props:any)=> {
        {pages.map(page=>{
         let k
         if(page === pages.length){
-             k=<p className={`text-sm  sm:text-xl ${page === props.currentPage ? "text-black" : ""} hover:cursor-pointer`} onClick={()=>{props.setCurrentPage(page)}}>{page}</p>  
+             k=<p key={Math.random()} className={`text-sm  sm:text-xl ${page === props.currentPage ? "text-black" : ""} hover:cursor-pointer`} onClick={()=>{props.setCurrentPage(page)}}>{page}</p>  
         }
-       else{ k=<p className={`text-sm  sm:text-xl ${page === props.currentPage ? "text-black" : ""} hover:cursor-pointer`} onClick={()=>{props.setCurrentPage(page)}}>{page} , </p>  }
+       else{ k=<p key={Math.random()} className={`text-sm  sm:text-xl ${page === props.currentPage ? "text-black" : ""} hover:cursor-pointer`} onClick={()=>{props.setCurrentPage(page)}}>{page} , </p>  }
        return k
     
     }

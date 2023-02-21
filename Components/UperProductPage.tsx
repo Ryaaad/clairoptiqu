@@ -3,7 +3,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import {AddItem} from '../feature/Shoping/ShopingSlice'
 import {ClickerPannier} from '../feature/main/mainSlice'
-import { useEffect, useState , useRef } from "react";
+import { useEffect, useState} from "react";
 import Link from "next/link";
 interface props{
     id:number,
@@ -87,7 +87,7 @@ const UperProductPage:React.FC<props> = (props) => {
                 <AiFillStar className="sm:text-[25px] lg:text-[30px]"></AiFillStar> */}
                 {
                 arr.map(ele=>{
-                    return  <AiFillStar key={ele} className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
+                    return  <AiFillStar key={Math.random()} className="sm:text-[25px] lg:text-[30px]"></AiFillStar>
                 })
                 }
             </div>
@@ -145,7 +145,7 @@ const UperProductPage:React.FC<props> = (props) => {
                         <AiFillStar className="text-[20px]"></AiFillStar> */}
                         {
                 arr.map(ele=>{
-                    return  <AiFillStar key={ele} className="text-[20px]"></AiFillStar>
+                    return  <AiFillStar key={Math.random()} className="text-[20px]"></AiFillStar>
                 })
                 }
                     </div>
