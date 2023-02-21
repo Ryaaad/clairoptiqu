@@ -14,7 +14,7 @@ interface props{
     prix: number,
     img: String,
     promotion: number,
-    frais_livraison: number,
+    frais_livraison: any,
     Qte: number
   }
   
@@ -305,7 +305,7 @@ const checkOut=()=> {
             if (firstUpdate.current) {
                 firstUpdate.current = false;
             Shpoped.map((item,id)=>{
-                if(item.id != -1 && !item.frais_livraison){
+                if(item.id != -1 && (!item.frais_livraison || item.frais_livraison == 'false') ){
                     setFree(false)
                    
                 }
