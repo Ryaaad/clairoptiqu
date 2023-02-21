@@ -21,7 +21,7 @@ const Products = () => {
         if (firstUpdate.current) {
           firstUpdate.current = false;
           // first render
-          fetch('http://localhost:8000/api/v1/products/')
+          fetch('https://api.clairopticdz.com//api/v1/products/')
       .then((res) => res.json())
       .then((data1) => {
         dispatch(SetAllProduct(data1))
