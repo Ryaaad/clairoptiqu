@@ -8,7 +8,7 @@ interface props{
   prix: number,
   img: String,
   promotion: number,
-  frais_livraison: number,
+  frais_livraison: any,
   Qte: number
 }
 
@@ -24,7 +24,9 @@ const CheckoutCard:React.FC<props>=(props) =>{
             <div className='flex flex-col gap-2  py-2  text-transparent'>
                     <h4 className='text-[16px] lg:text-[20px] text-[#4D4D81]'>{Translation.Card.Qte}  {props.Qte}</h4>
                     {!props.frais_livraison && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-[15px] lg:text-lg rounded-lg sm:px-2 py-[1px]">{Translation.Card.Livraison.NotFree}</p>}
-                    {props.frais_livraison  && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[15px] lg:text-lg rounded-lg sm:px-2 py-[1px]">{Translation.Card.Livraison.Free}</p>}
+                    {props.frais_livraison == 'false' && <p className="bg-[#FFAA064D] text-[#CE8902] font-semibold text-[15px] lg:text-lg rounded-lg sm:px-2 py-[1px]">{Translation.Card.Livraison.NotFree}</p>}
+                    {props.frais_livraison == true && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[15px] lg:text-lg rounded-lg sm:px-2 py-[1px]">{Translation.Card.Livraison.Free}</p>}
+                    {props.frais_livraison == 'true' && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[15px] lg:text-lg rounded-lg sm:px-2 py-[1px]">{Translation.Card.Livraison.Free}</p>}
                         {/* {props.freeShiping && <p className="bg-[#0BFF064D] text-[#02CE16] font-semibold text-[16px] lg:text-lg rounded-lg px-3 py-[1px]">{Translation.Card.Livraison.Free}</p>} */}
                 </div>
                 <div className="flex flex-col gap-2 py-2 text-[16px] lg:text-lg text-[#4D4D81] font-semibold ">

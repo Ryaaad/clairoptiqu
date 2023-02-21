@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 import { AiOutlineSearch } from 'react-icons/Ai';
 import ProductCard from './productCard';
 import Pagination from './pagination';
-import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import {SetAllProduct} from '../feature/Shoping/ShopingSlice'
 import { useRouter } from 'next/router';
@@ -21,7 +20,7 @@ const Products = () => {
         if (firstUpdate.current) {
           firstUpdate.current = false;
           // first render
-          fetch('https://api.clairopticdz.com//api/v1/products/')
+          fetch('https://api.clairopticdz.com/api/v1/products/')
       .then((res) => res.json())
       .then((data1) => {
         dispatch(SetAllProduct(data1))
@@ -101,7 +100,7 @@ const Products = () => {
                       {currentPosts && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-5 items-center p-2'>
                   {
                   currentPosts.map((card:any)=>{
-                      return <ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles} ></ProductCard>
+                      return <ProductCard key={Math.random()} id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles} ></ProductCard>
                   })
                   }
               </div>}
@@ -120,7 +119,7 @@ const Products = () => {
               <div className='z-[2] flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
           {currentPosts && <div className='grid-cols-2 z-[4] grid lg:grid-cols-3 w-full gap-5 gap-y-58 items-center p-2'>
               {currentPosts.map((card:any)=>{
-                  return <ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles}></ProductCard>
+                  return <ProductCard key={Math.random()} id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles}></ProductCard>
               })}
           </div>}
          <Pagination 

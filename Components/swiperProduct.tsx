@@ -26,7 +26,9 @@ const SwiperProduct= (props:any) => {
     }, [direction])
     const firstUpdate = useRef(true);
     useEffect(() => {
-        fetch('https:/api.clairopticdz.com/api/v1/products/')
+    if(firstUpdate.current){
+      firstUpdate.current = false;
+      fetch('https://api.clairopticdz.com/api/v1/products/')
     .then((res) => res.json())
     .then((data1) => {
       dispatch(SetAllProduct(data1))
@@ -34,6 +36,7 @@ const SwiperProduct= (props:any) => {
       console.log(AllProduct)
       console.log(AllProducts)
     });
+    }
         // first render
         
       
@@ -41,7 +44,7 @@ const SwiperProduct= (props:any) => {
     return ( 
            <div>
             <div className='pb-2 mb-2 hidden lg:block'>
-            {AllProducts && <Swiper className='w-full py-4 pb-6'
+            {AllProduct && <Swiper className='w-full py-4 pb-6'
             dir={!direction ? "rtl" : "ltr"}
             key={direction}
               modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -54,7 +57,7 @@ const SwiperProduct= (props:any) => {
             >
               {
                 AllProducts.map((card:any) =>{
-                 return  <SwiperSlide className='p-4' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles}></ProductCard></SwiperSlide>} 
+                 return  <SwiperSlide key={card.id} className='p-4' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles}></ProductCard></SwiperSlide>} 
                 )
               }
               
@@ -78,7 +81,7 @@ const SwiperProduct= (props:any) => {
             >
              {
                 AllProducts.map((card:any)=>{
-                 return  <SwiperSlide className='p-2' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles}></ProductCard></SwiperSlide>
+                 return  <SwiperSlide key={card.id} className='p-2' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles}></ProductCard></SwiperSlide>
                 })
               }
             </Swiper>}
@@ -86,7 +89,7 @@ const SwiperProduct= (props:any) => {
            {/* <-----------> */}
 
            <div className='pb-2 mb-2 sm:hidden block'>
-             {AllProducts && <Swiper className='w-full py-4 pb-6'
+             {AllProduct && <Swiper className='w-full py-4 pb-6'
             // install Swiper modules
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={0}
@@ -98,7 +101,7 @@ const SwiperProduct= (props:any) => {
             >
               {
                 AllProducts.map((card:any)=>{
-                  return  <SwiperSlide className='p-1' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles}></ProductCard></SwiperSlide>
+                  return  <SwiperSlide key={card.id} className='p-1' dir={direction ? 'ltr' : "rtl"}><ProductCard id={card.id} nom={card.nom} promotion={card.promotion} price={card.prix} frais_livraison={card.livraison_gratuit} description={card.description} img={card.get_thumbnail} brand={card.brand} img1={card.get_image} img2={card.get_image2} img3={card.get_image3} rate={card.etoiles}></ProductCard></SwiperSlide>
                 })
               }
             </Swiper>}

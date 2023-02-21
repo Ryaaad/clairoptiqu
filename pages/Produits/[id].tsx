@@ -23,7 +23,7 @@ const direction=useSelector((state:any)=>state.main.dir)
                 <h1 className="text-[#E00409] text-[32px] font-semibold text-center p-4">Nos Produits</h1>
            {  data &&   <UperProductPage  id={data.id ? +data.id : 0} nom={data.nom as string}
         promotion={data.promotion ? +data.promotion : 0}
-        prix={data.price ? +data.price : 0} description={data.description as string} img={data.img as string} img1={data.img1 as string} img2={data.img2 as string} img3={data.img3 as string} rate={data.rate as any} frais_livraison={JSON.parse(data.frais_livraison as string)}></UperProductPage>
+        prix={data.price ? +data.price : 0} description={data.description as string} img={data.img as string} img1={data.img1 as string} img2={data.img2 as string} img3={data.img3 as string} rate={data.rate as any} frais_livraison={data.frais_livraison}></UperProductPage>
             }   
                 <SwiperProduct id={data}></SwiperProduct>
                 <Footer></Footer>
