@@ -340,7 +340,7 @@ const checkOut=()=> {
                        
                 })
                 console.log(articles)
-                axios.post("http://127.0.0.1:8000/api/v1/checkout/",
+                axios.post("https://api.clairopticdz.com/api/v1/checkout/",
                 {prenom:prenom,
                 nom:nom,
                 address:adresse,
