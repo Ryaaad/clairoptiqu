@@ -126,13 +126,14 @@ const UperProductPage:React.FC<props> = (props) => {
         <div className="sm:hidden flex flex-col bg-white gap-6 pl-5 py-2 rounded-lg ">
         <div className="img flex flex-col gap-4">
             <div className="w-[320px] border-[#4D4D81] rounded-tl-[40px] rounded-br-[40px] border-[1px]">
-                <img src={props.img as string} alt="img2"  className="rounded-tl-[40px] rounded-br-[40px] w-full" />
+                {!CurrentImg  && <img src={props.img as string} alt="Mainimg"  className="rounded-tl-[40px] rounded-br-[40px] w-full h-full" />}
+            {CurrentImg  && <img src={CurrentImg as string} alt="Mainimg"  className="rounded-tl-[40px] rounded-br-[40px] w-full h-full" />}
             </div>
             <div className="flex gap-3">
-                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img as string} alt="pos1" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
-                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img1 as string} alt="pos2" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
-                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img2 as string} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
-                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"><img src={props.img3 as string} alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]"  onClick={()=>handelImg(props.img)}><img src={props.img as string}  alt="pos1" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]" onClick={()=>handelImg(props.img1)}><img src={props.img1 as string}  alt="pos2" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]" onClick={()=>handelImg(props.img2)}><img src={props.img2 as string}  alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
+                <div className="w-[70px] rounded-tl-[40px] rounded-br-[40px] border-[1px] border-[#4D4D81]" onClick={()=>handelImg(props.img3)}><img src={props.img3 as string}  alt="pos3" className="rounded-tl-[40px] rounded-br-[40px] w-full h-full"/></div>
             </div>
         </div>
             <div className="text w-full">
