@@ -19,7 +19,7 @@ const CardP:React.FC<props> = (props) => {
     return (
         <div style={{boxShadow: "rgba(17,17,26,0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px"}} 
          className="flex relative items-center gap-4 my-4 bg-white h-fit rounded-[10px] p-2 max-w-full max-md:my-2 max-md:px-1 max-sm:gap-2  " >
-        <img src={props.img} alt=""  className="h-[100px] w-[110px] rounded-tl-[40px] rounded-br-[40px] max-lg:w-[100px] max-sm:h-[70px] max-sm:w-[80px] " />
+        <img src={props.img} alt=""  className="h-[100px] w-[110px] rounded-tl-[40px] rounded-br-[40px] object-cover max-lg:w-[100px] max-sm:h-[70px] max-sm:w-[80px] " />
         <div className='flex relative items-center gap-4 max-w-full max-sm:gap-2  flex-wrap ' >
 
         </div>

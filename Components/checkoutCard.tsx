@@ -17,7 +17,7 @@ const CheckoutCard:React.FC<props>=(props) =>{
   const currency=useSelector((state:any)=>state.main.Lang.Money)
   return (
     <div className='bg-white flex gap-2 w-full p-2 rounded-lg'>
-        <div className="img w-28 h-28 sm:w-32  sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 "><img className='w-full h-full rounded-tl-[40px] rounded-br-[40px]' src={props.img as string} alt="" /></div>
+        <div className="img w-28 h-28 sm:w-32  sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 "><img className='w-full h-full rounded-tl-[40px] rounded-br-[40px] object-cover' src={props.img as string} alt="" /></div>
         <div className="text basis-[70%]">
             <h3 className='font-bold text-[18px] lg:text-[30px] text-[#4D4D81]'>{props.nom}</h3>
            <div className='flex w-full justify-between'>

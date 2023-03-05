@@ -24,7 +24,7 @@ const Navbar= () => {
         <div  className="h-[81px] flex px-[57px] pr-[73px] items-center justify-between text-[rgba(224,4,9,1)] bg-white
         max-lg:px-[46px] max-md:px-[35px] max-sm:hidden  ">
           <Link href={`/`} className="flex items-center gap-2"  onClick={()=>dispatch(ChangeRouter('Home'))} >
-            <img src={logo.src} alt="" className='rounded-full h-[50px] w-[50px] cursor-pointer max-lg:h-[40px] max-lg:w-[40px] max-md:h-[35px] max-md:w-[35px] ' />
+            <img src={logo.src} alt="" className='rounded-full h-[50px] object-cover w-[50px] cursor-pointer max-lg:h-[40px] max-lg:w-[40px] max-md:h-[35px] max-md:w-[35px] ' />
             <h1 className=' font-[700] text-[26px] cursor-pointer max-lg:text-[22px] max-md:text-[20px] ' >Clair’optique</h1>
           </Link>
           <ul className="flex text-[24px] font-[400] gap-[12px] max-lg:text-[18px] max-md:text-[16px] ">

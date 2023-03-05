@@ -31,7 +31,7 @@ const Card:React.FC<props> = (props) => {
         max-sm:rounded-[15px] max-sm:w-[30vw] max-sm:pb-1 max-sm:min-w-max 
         max-[550px]:w-[35vw] max-[550px]:
         ">
-            <img src={props.img} alt=""  className="h-[20vw] max-lg:w-[28vw]
+            <img src={props.img} alt=""  className="h-[20vw] max-lg:w-[28vw] object-cover
 max-sm:w-[30vw]
  max-[550px]:w-[35vw] rounded-t-[20px] bg-cover w-[22vw] max-lg:h-[22vw] max-sm:h-[30vw] max-sm:rounded-t-[15px] " />
         <div className='px-[10px] py-2 max-[550px]:px-2 '>

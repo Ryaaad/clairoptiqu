@@ -15,7 +15,7 @@ export default function hero() {
             max-sm:max-w-[65vw] max-sm:h-[210px] max-sm:rounded-tl-[20px] max-sm:rounded-br-[20px] max-md:max-h-[350px]  max-sm:justify-center 
             max-[550px]:max-w-[70vw]
             ">
-            <img src={GlassMen.src} alt="" className={`rounded-tr-[40px] w-[55vw] h-[477px] max-xl:h-[460px] max-xl:w-[55vw] rounded-bl-[40px]  max-lg:w-[50vw] max-lg:h-[48vh]
+            <img src={GlassMen.src} alt="" className={`rounded-tr-[40px] object-cover w-[55vw] h-[477px] max-xl:h-[460px] max-xl:w-[55vw] rounded-bl-[40px]  max-lg:w-[50vw] max-lg:h-[48vh]
             max-sm:absolute max-sm:bottom-[-50px] max-sm:w-[45vw]  ${dir ? 'max-sm:left-[-30%]' : 'max-sm:right-[-30%]'}  max-sm:max-h-[140px]  max-sm:rounded-tr-[30px]
             max-sm:rounded-bl-[30px] max-[550px]:bottom-[-60px] max-[550px]:left-[-25%]
             `}
