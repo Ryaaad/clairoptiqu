@@ -29,7 +29,7 @@ const ProductCard:React.FC<props> = (props) => {
   }}>
          {/* state={props} */}
          <div className="hidden sm:block sm:w-[250px] lg:w-[280px] xl:w-[310px] rounded-bl-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px]" style={{boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
-           <div className="w-full h-[200px]">
+           <div className="w-full h-[200px] ">
              <img src={props.img as string} alt="img"  className="rounded-tl-[20px] rounded-tr-[20px] w-full h-full " />
            </div>
             <div className="text bg-white p-3 py-2 rounded-bl-[20px] rounded-br-[20px]">
@@ -56,7 +56,7 @@ const ProductCard:React.FC<props> = (props) => {
     query: props as unknown as string | ParsedUrlQueryInput | null | undefined, // the data
   }}>
             <div className="block sm:hidden w-[10rem] rounded-bl-[20px] rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px]" style={{boxShadow: "0px 8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
-            <div className="w-full h-[40vw]">
+            <div className="w-full h-[30vw]">
                 <img src={props.img as string } alt=""  className="h-full rounded-tl-[20px] rounded-tr-[20px] w-full object-cover" />
             </div>
                 <div className="text bg-white p-2 py-1 rounded-bl-[20px] rounded-br-[20px]">
