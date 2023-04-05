@@ -1,4 +1,4 @@
-import { AiFillStar } from "react-icons/Ai";
+import { AiFillStar } from "react-icons/ai";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import {AddItem} from '../feature/Shoping/ShopingSlice'
