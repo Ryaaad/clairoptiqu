@@ -13,7 +13,7 @@ const Landing = () => {
     const dispatch=useDispatch()
 
 useEffect(() => {
-    fetch('https:/api.clairopticdz.com/api/v1/latest-products/')
+    fetch('https://api.clairopticdz.com/api/v1/latest-products/')
     .then((res) => res.json())
     .then((data) => {
       dispatch(SetLatest(data))
