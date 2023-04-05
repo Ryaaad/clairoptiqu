@@ -1,6 +1,6 @@
 import SideNav from './sideNav';
 import { useState, useEffect, useRef } from 'react';
-import { AiOutlineSearch } from 'react-icons/Ai';
+import { AiOutlineSearch } from 'react-icons/ai';
 import ProductCard from './productCard';
 import Pagination from './pagination';
 import { useDispatch, useSelector } from 'react-redux';
