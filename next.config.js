@@ -7,8 +7,8 @@ const nextConfig = {
   exportPathMap: async function (defaultPathMap) {
     return {
       '/': { page: '/' },
-      '/produits': { page: '/produits' },
-      '/produits/[id]': { page: '/produits/[id]' },
+      '/Produits': { page: '/Produits/index' },
+      '/Produits/[id]': { page: '/Produits/[id]' },
       '/checkout': { page: '/checkout' },
       // Add more routes as needed
     };

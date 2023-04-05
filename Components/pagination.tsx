@@ -53,7 +53,7 @@ onClick={()=>Set(props.currentPage-2)} >
       return  <div key={page}  className={`text-lg    rounded-[10px] w-[50px] h-[50px] grid items-center justify-center cursor-pointer font-semibold 
       ${page==props.currentPage ? "text-black" : "text-[#4D4D81CC]"} ${page>props.currentPage+2 && "hidden"} ${page<props.currentPage-1 && "hidden"} `} 
    onClick={()=>Set(page)}   >
-        {page} ,
+        {direction && page} , {!direction && page }
          </div> 
     })
 }
