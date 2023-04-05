@@ -96,7 +96,7 @@ const Products = () => {
           </div> 
       <div className='sm:hidden z-[2]'>
               
-          <div className='z-[2] flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4'>
+          <div className='z-[2] flex flex-col w-full justify-between items-center sm:p-4 lg:p-2  xl:p-4 min-h-[400px]'>
                       {currentPosts && <div className='grid-cols-2 grid lg:grid-cols-3 w-full gap-5 gap-y-5 items-center p-2'>
                   {
                   currentPosts.map((card:any)=>{
