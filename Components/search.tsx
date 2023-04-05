@@ -1,4 +1,4 @@
-import {  AiOutlineSearch } from "react-icons/Ai";
+import {  AiOutlineSearch } from "react-icons/ai";
 
 const Search = () => {
     return ( 

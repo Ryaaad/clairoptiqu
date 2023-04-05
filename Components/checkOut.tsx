@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import CheckoutCard from './checkoutCard';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
-import {AiOutlineCheck} from 'react-icons/Ai'
+import {AiOutlineCheck} from 'react-icons/ai'
 import {BiError} from 'react-icons/bi'
 import { useRouter } from 'next/router'
 import {ChangeRouter} from '../feature/main/mainSlice'

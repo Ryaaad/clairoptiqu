@@ -1,6 +1,6 @@
 import logo from '../assets/logo2.png'
 import { MdLanguage } from "react-icons/md";
-import { FaShoppingCart } from "react-icons/Fa";
+import { FaShoppingCart } from "react-icons/fa";
 import {ClickerPannier} from '../feature/main/mainSlice'
 import { useDispatch, useSelector } from "react-redux";
 import Burger from '../assets/Burger.png'
